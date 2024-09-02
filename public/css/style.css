@@ -1,0 +1,119 @@
+@import url('reset.css');
+
+body {
+    color: black;
+}
+
+.wrapper {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 40px 15px;
+}
+
+.wrapper__blocs {
+    display: flex;
+    gap: 58px;
+}
+
+.sidebar {
+    flex: 1 0 50%;
+}
+
+.sidebar__top:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.sidebar__form {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sidebar__input {
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 8px;
+    background: rgb(255, 255, 255);
+    padding: 5px 20px;
+}
+
+
+.sidebar__directory::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/Icon.svg');
+    background-repeat: no-repeat;
+    padding: 0 0 0 2px;
+}
+
+.sidebar__btns {
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar__btn {
+    padding: 5px 20px;
+    border-radius: 8px;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar__btn:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
+
+.sidebar__btn:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.sidebar__btn.active {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content {
+    flex: 1 0 50%;
+}
+
+.content__top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content__top:not(:last-child) {
+    margin-bottom: 33px;
+}
+
+.content__btn {
+    padding: 5px 20px;
+    border-radius: 8px;
+    background-color: #d1d1d1;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content__btn:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+/* Активное состояние для кнопок */
+.content__btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.content__btn:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
