@@ -53,10 +53,12 @@ class Database
         return $stmt->execute($params);
     }
 
-    public function fetchAssoc(string $sql, array $params = []): ?array
+    public function fetchAssoc(string $sql, array $params = []): bool | array | null
     {
-        $stmt = $this->query($sql, $params);
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        $stmt = $this->connection->prepare($sql);
+        $result = $stmt->execute($params) ? $stmt->fetch(\PDO::FETCH_ASSOC) : null;
+
+        return $result;
     }
 
     public function fetchAll(string $sql, array $params = []): array
@@ -69,6 +71,8 @@ class Database
     {
         return $this->connection->lastInsertId();
     }
+
+
 
     public function close()
     {

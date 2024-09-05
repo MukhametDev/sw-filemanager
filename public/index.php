@@ -1,22 +1,16 @@
 <?php
 
-use App\App;
-use App\DB\Database;
+header("Access-Control-Allow-Origin: *"); // или укажите конкретный домен
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-require __DIR__ . '/../vendor/autoload.php';
+// Подключаем bootstrap файл, чтобы получить приложение
+$app = require_once __DIR__ . '/../bootstrap/app.php';
 
 try {
-    $db = Database::getInstance();
-    $db->init();
-    $connection = $db->getConnection(); // Получаем подключение
-
-    // Выполнение простого запроса
-    $stmt = $connection->query('SELECT VERSION()');
-    $version = $stmt->fetchColumn();
-    // $db = Database::getInstance(); // Получение Singleton экземпляра
-    // $app = new App($db);
-    // $connection = $app->run();
-    dd($connection);
+    // Запуск приложения
+    $app->run();
 } catch (\Exception $e) {
-    echo $e->getMessage();
+    // Обработка исключений и рендеринг ошибки
+    \App\View\View::renderError($e->getMessage());
 }

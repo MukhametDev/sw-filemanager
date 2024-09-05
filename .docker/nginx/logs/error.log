@@ -3603,3 +3603,245 @@
 2024/09/02 09:48:02 [notice] 1#1: start worker process 37
 2024/09/02 09:48:02 [notice] 1#1: start worker process 38
 2024/09/02 09:48:02 [notice] 1#1: start worker process 39
+2024/09/03 02:50:33 [notice] 1#1: using the "epoll" event method
+2024/09/03 02:50:33 [notice] 1#1: nginx/1.25.4
+2024/09/03 02:50:33 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/03 02:50:33 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/03 02:50:33 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/03 02:50:33 [notice] 1#1: start worker processes
+2024/09/03 02:50:33 [notice] 1#1: start worker process 27
+2024/09/03 02:50:33 [notice] 1#1: start worker process 28
+2024/09/03 02:50:33 [notice] 1#1: start worker process 29
+2024/09/03 02:50:33 [notice] 1#1: start worker process 30
+2024/09/03 09:58:21 [notice] 1#1: using the "epoll" event method
+2024/09/03 09:58:21 [notice] 1#1: nginx/1.25.4
+2024/09/03 09:58:21 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/03 09:58:21 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/03 09:58:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/03 09:58:21 [notice] 1#1: start worker processes
+2024/09/03 09:58:21 [notice] 1#1: start worker process 27
+2024/09/03 09:58:21 [notice] 1#1: start worker process 28
+2024/09/03 09:58:21 [notice] 1#1: start worker process 29
+2024/09/03 09:58:21 [notice] 1#1: start worker process 30
+2024/09/03 17:54:01 [notice] 1#1: using the "epoll" event method
+2024/09/03 17:54:01 [notice] 1#1: nginx/1.25.4
+2024/09/03 17:54:01 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/03 17:54:01 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/03 17:54:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/03 17:54:01 [notice] 1#1: start worker processes
+2024/09/03 17:54:01 [notice] 1#1: start worker process 28
+2024/09/03 17:54:01 [notice] 1#1: start worker process 29
+2024/09/03 17:54:01 [notice] 1#1: start worker process 30
+2024/09/03 17:54:01 [notice] 1#1: start worker process 31
+2024/09/03 20:48:48 [warn] 30#30: *161 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 20:48:59 [warn] 30#30: *161 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 20:50:49 [warn] 30#30: *169 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 20:51:59 [warn] 30#30: *169 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 20:52:20 [warn] 30#30: *169 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000005, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 21:07:24 [warn] 31#31: *186 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000006, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 21:24:33 [warn] 28#28: *220 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/03 21:27:14 [warn] 28#28: *225 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000008, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/?"
+2024/09/04 03:31:10 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:31:18 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:31:27 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:31:36 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:31:45 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:31:55 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:32:07 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:32:21 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:32:42 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:33:16 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:34:16 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:35:24 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:36:38 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:36:51 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:37:03 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:37:15 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:37:27 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:37:38 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:37:51 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:38:06 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:38:29 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:39:03 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:40:03 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:41:11 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:42:19 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:43:28 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:44:36 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:45:45 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:46:53 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:48:01 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:49:10 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:50:18 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:51:26 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:52:35 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:53:43 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:54:51 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:56:00 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:57:08 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:58:16 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 03:59:25 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 04:00:33 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 04:01:42 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 04:02:50 [emerg] 1#1: host not found in upstream "sw-php:9000" in /etc/nginx/conf.d/upstream.conf:2
+2024/09/04 04:03:58 [notice] 1#1: using the "epoll" event method
+2024/09/04 04:03:58 [notice] 1#1: nginx/1.25.4
+2024/09/04 04:03:58 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/04 04:03:58 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/04 04:03:58 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/04 04:03:58 [notice] 1#1: start worker processes
+2024/09/04 04:03:58 [notice] 1#1: start worker process 28
+2024/09/04 04:03:58 [notice] 1#1: start worker process 29
+2024/09/04 04:03:58 [notice] 1#1: start worker process 30
+2024/09/04 04:03:58 [notice] 1#1: start worker process 31
+2024/09/04 04:05:30 [error] 28#28: *1 client intended to send too large body: 306423361 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 04:06:41 [warn] 31#31: *12 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:47:15 [warn] 28#28: *122 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:47:21 [warn] 28#28: *122 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:53:06 [warn] 29#29: *164 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:53:26 [warn] 29#29: *164 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000005, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:53:34 [warn] 29#29: *164 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000006, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:58:51 [warn] 29#29: *178 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 05:59:48 [warn] 30#30: *188 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000008, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 06:00:51 [warn] 30#30: *188 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000009, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 06:04:58 [warn] 29#29: *219 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000010, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 07:28:58 [warn] 30#30: *298 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000011, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:08:42 [warn] 31#31: *388 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000012, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:08:53 [warn] 31#31: *388 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000013, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:10:16 [warn] 31#31: *408 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000014, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:17:01 [warn] 28#28: *430 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000015, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:17:12 [warn] 28#28: *430 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000016, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:23:21 [warn] 28#28: *473 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000017, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 08:23:31 [warn] 28#28: *473 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000018, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:01:40 [warn] 29#29: *502 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000019, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:01:54 [error] 29#29: *502 client intended to send too large body: 82515622 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:02:37 [error] 29#29: *507 client intended to send too large body: 1338460 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:05:26 [error] 29#29: *524 client intended to send too large body: 1338461 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:05:36 [error] 29#29: *522 client intended to send too large body: 1338461 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:06:09 [warn] 29#29: *537 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000020, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:31:22 [warn] 28#28: *561 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000021, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:32:47 [warn] 31#31: *550 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000022, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:32:57 [warn] 31#31: *550 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000023, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 09:46:41 [warn] 30#30: *619 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000024, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 10:11:25 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/09/04 10:11:25 [notice] 28#28: gracefully shutting down
+2024/09/04 10:11:25 [notice] 29#29: gracefully shutting down
+2024/09/04 10:11:25 [notice] 30#30: gracefully shutting down
+2024/09/04 10:11:25 [notice] 31#31: gracefully shutting down
+2024/09/04 10:11:25 [notice] 30#30: exiting
+2024/09/04 10:11:25 [notice] 29#29: exiting
+2024/09/04 10:11:25 [notice] 31#31: exiting
+2024/09/04 10:11:25 [notice] 28#28: exiting
+2024/09/04 10:11:25 [notice] 30#30: exit
+2024/09/04 10:11:25 [notice] 29#29: exit
+2024/09/04 10:11:25 [notice] 31#31: exit
+2024/09/04 10:11:25 [notice] 28#28: exit
+2024/09/04 10:11:25 [notice] 1#1: signal 17 (SIGCHLD) received from 28
+2024/09/04 10:11:25 [notice] 1#1: worker process 28 exited with code 0
+2024/09/04 10:11:25 [notice] 1#1: signal 29 (SIGIO) received
+2024/09/04 10:11:25 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2024/09/04 10:11:25 [notice] 1#1: worker process 29 exited with code 0
+2024/09/04 10:11:25 [notice] 1#1: worker process 30 exited with code 0
+2024/09/04 10:11:25 [notice] 1#1: worker process 31 exited with code 0
+2024/09/04 10:11:25 [notice] 1#1: exit
+2024/09/04 10:11:45 [notice] 1#1: using the "epoll" event method
+2024/09/04 10:11:45 [notice] 1#1: nginx/1.25.4
+2024/09/04 10:11:45 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/04 10:11:45 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/04 10:11:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/04 10:11:45 [notice] 1#1: start worker processes
+2024/09/04 10:11:45 [notice] 1#1: start worker process 29
+2024/09/04 10:11:45 [notice] 1#1: start worker process 30
+2024/09/04 10:11:45 [notice] 1#1: start worker process 31
+2024/09/04 10:11:45 [notice] 1#1: start worker process 32
+2024/09/04 10:17:36 [warn] 30#30: *22 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 10:18:21 [warn] 32#32: *16 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:00:12 [notice] 1#1: using the "epoll" event method
+2024/09/04 11:00:12 [notice] 1#1: nginx/1.25.4
+2024/09/04 11:00:12 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/04 11:00:12 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/04 11:00:12 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/04 11:00:12 [notice] 1#1: start worker processes
+2024/09/04 11:00:12 [notice] 1#1: start worker process 28
+2024/09/04 11:00:12 [notice] 1#1: start worker process 29
+2024/09/04 11:00:12 [notice] 1#1: start worker process 30
+2024/09/04 11:00:12 [notice] 1#1: start worker process 31
+2024/09/04 11:01:38 [warn] 29#29: *3 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:07:32 [warn] 30#30: *17 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:08:04 [warn] 30#30: *17 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:07 [error] 29#29: *34 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:07 [error] 28#28: *32 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:08 [error] 30#30: *17 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:08 [error] 28#28: *60 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:08 [error] 28#28: *62 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:08 [error] 28#28: *64 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:13 [error] 28#28: *66 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:13 [error] 28#28: *68 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:14 [error] 28#28: *70 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:14 [error] 28#28: *72 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:14 [error] 28#28: *74 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:14 [error] 28#28: *76 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=2 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:20 [error] 28#28: *78 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:22 [error] 28#28: *80 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:22 [error] 28#28: *83 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:23 [error] 28#28: *85 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:23 [error] 28#28: *87 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:23 [error] 28#28: *89 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:31 [error] 29#29: *91 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:31 [error] 29#29: *93 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:31 [error] 29#29: *95 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:32 [error] 29#29: *97 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:32 [error] 29#29: *99 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:32 [error] 29#29: *101 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:34 [error] 29#29: *103 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:34 [error] 29#29: *105 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:34 [error] 29#29: *107 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:34 [error] 29#29: *109 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:35 [error] 29#29: *111 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:11:35 [error] 29#29: *113 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=1 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:12:18 [warn] 29#29: *115 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:16:22 [warn] 30#30: *133 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000005, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:16:28 [warn] 30#30: *133 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000006, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:15 [warn] 31#31: *164 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:18 [error] 31#31: *164 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=6 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:18 [error] 31#31: *204 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=6 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:19 [error] 31#31: *207 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=6 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:19 [error] 31#31: *209 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=6 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:19 [error] 31#31: *211 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=6 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:23:19 [error] 31#31: *213 upstream prematurely closed FastCGI request while reading upstream, client: 172.22.0.1, server: , request: "GET /api/download-file?id=6 HTTP/1.1", upstream: "fastcgi://172.22.0.2:9000", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:24:35 [warn] 31#31: *215 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000008, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:26:45 [warn] 30#30: *235 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000009, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:27:34 [warn] 30#30: *235 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000010, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:27:40 [warn] 30#30: *235 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000011, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:27:47 [warn] 30#30: *235 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000012, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:28:20 [warn] 30#30: *235 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000013, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:29:53 [warn] 30#30: *235 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000014, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:34:31 [error] 30#30: *317 client intended to send too large body: 3147538 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:34:40 [error] 30#30: *320 client intended to send too large body: 6946951 bytes, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:34:48 [warn] 30#30: *321 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000015, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:38:14 [warn] 28#28: *329 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000016, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:38:59 [warn] 28#28: *329 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000017, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:55:57 [warn] 28#28: *366 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000018, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:56:01 [warn] 28#28: *366 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000019, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 11:56:58 [warn] 28#28: *366 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000020, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 12:02:11 [warn] 28#28: *414 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000021, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 12:43:29 [warn] 28#28: *445 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000022, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 13:15:46 [warn] 31#31: *523 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000023, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 13:32:44 [warn] 31#31: *554 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000024, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 13:44:11 [warn] 30#30: *563 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000025, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 16:16:37 [warn] 29#29: *739 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000026, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 16:39:02 [warn] 29#29: *830 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000027, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 17:05:35 [warn] 29#29: *861 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000028, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 17:05:47 [warn] 29#29: *861 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000029, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 17:16:17 [warn] 31#31: *886 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000030, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/04 17:16:32 [warn] 31#31: *886 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000031, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/05 03:11:00 [notice] 1#1: using the "epoll" event method
+2024/09/05 03:11:00 [notice] 1#1: nginx/1.25.4
+2024/09/05 03:11:00 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/05 03:11:00 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/05 03:11:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/05 03:11:00 [notice] 1#1: start worker processes
+2024/09/05 03:11:00 [notice] 1#1: start worker process 28
+2024/09/05 03:11:00 [notice] 1#1: start worker process 29
+2024/09/05 03:11:00 [notice] 1#1: start worker process 30
+2024/09/05 03:11:00 [notice] 1#1: start worker process 31

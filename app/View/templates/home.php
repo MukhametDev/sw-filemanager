@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo htmlspecialchars($this->includeCSS('style.css')); ?>">
+    <link rel="stylesheet" href="<?php echo htmlspecialchars(\App\View\View::includeCSS('style.css')); ?>">
     <title><?php echo htmlspecialchars($title); ?></title>
 </head>
 <body>
@@ -22,7 +22,7 @@
             </div>
             <div class="sidebar__bottom">
                 <ul class="sidebar__directories">
-                    <li class="sidebar__directory">storage</li>
+                    <?php echo $data['directories'] ?>
                 </ul>
             </div>
         </section>
@@ -32,12 +32,12 @@
                 <button class="content__btn">Скачать</button>
             </div>
             <div class="content__bottom">
-                <img src="/images/no-photo.png" alt="">
+                <img class="no-img" src="/images/no-photo.png" alt="">
             </div>
         </section>
         </div>
     </div>
 
-    <script type="module" src="<?php echo htmlspecialchars($this->includeJS('app.js')); ?>"></></script>
+    <script type="module" src="<?php echo htmlspecialchars(\App\View\View::includeJS('app.js')); ?>"></></script>
 </body>
 </html>
