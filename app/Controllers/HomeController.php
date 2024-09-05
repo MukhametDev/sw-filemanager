@@ -7,14 +7,14 @@ use App\Repository\DirectoryRepository;
 use App\Repository\FileRepository;
 use App\View\View;
 
-class HomeController extends Controller
+class HomeController
 {
     private $fileRepository;
     private $directoryRepository;
-    public function __construct(Database $db)
+    public function __construct()
     {
-        $this->directoryRepository = new DirectoryRepository($db);
-        $this->fileRepository = new FileRepository($db);
+        $this->directoryRepository = new DirectoryRepository();
+        $this->fileRepository = new FileRepository();
     }
     public function index()
     {
@@ -32,7 +32,7 @@ class HomeController extends Controller
 
     protected function buildTreeHtml($directories, $files, $parentId = null)
     {
-        $html = '<ul>';
+        $html = '<ul class="sidebar__directories">';
 
         foreach ($directories as $directory) {
             if ($directory->parent_id == $parentId) {

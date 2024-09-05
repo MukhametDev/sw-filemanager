@@ -2523,3 +2523,707 @@ Routing: GET /api/get-directories
 Controller: \App\Controllers\Api\FolderController, Method: getDirectories
 Routing: POST /api/add-folder
 Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /favicon.ico
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /favicon.ico
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /favicon.ico
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Routing: GET /favicon.ico
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: DELETE /api/delete-folder
+Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: DELETE /api/delete-file
+Controller: \App\Controllers\Api\FileController, Method: deleteFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: POST /api/upload-file
+Controller: \App\Controllers\Api\FileController, Method: uploadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico

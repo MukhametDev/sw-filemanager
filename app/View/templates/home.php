@@ -21,9 +21,9 @@
                 </form>
             </div>
             <div class="sidebar__bottom">
-                <ul class="sidebar__directories">
+<!--                <ul class="sidebar__directories">-->
                     <?php echo $data['directories'] ?>
-                </ul>
+<!--                </ul>-->
             </div>
         </section>
         <section class="content">

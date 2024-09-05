@@ -91,7 +91,7 @@ class Router
                 file_put_contents('log.txt', "Controller: $controller, Method: $function\n", FILE_APPEND);
 
                 if (class_exists($controller)) {
-                    $controllerInstance = new $controller($db);  // Передаем $db в контроллер
+                    $controllerInstance = new $controller();  // Передаем $db в контроллер
 
                     if (method_exists($controllerInstance, $function)) {
                         call_user_func_array([$controllerInstance, $function], $matches);

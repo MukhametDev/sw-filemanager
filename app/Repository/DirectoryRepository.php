@@ -8,8 +8,8 @@ use App\Models\Directory;
 class DirectoryRepository
 {
     private $db;
-    public function __construct(Database $db) {
-        $this->db = $db;
+    public function __construct() {
+        $this->db = Database::getInstance();
     }
 
     public function getAllDirectories()

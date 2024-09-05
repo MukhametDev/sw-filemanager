@@ -2,73 +2,43 @@
 
 namespace App\Controllers\Api;
 
-use App\DB\Database;
-use App\Repository\FileRepository;
+use App\Services\FileService;
+use App\Services\DirectoryService;
+use App\Validators\FileValidator;
 
 class FileController
 {
-    private $fileRepository;
-    public function __construct(Database $db)
+    private $fileService;
+    private $directoryService;
+
+    public function __construct()
     {
-        $this->fileRepository = new FileRepository($db);
+        $this->fileService = new FileService();
+        $this->directoryService = new DirectoryService();
     }
+
     public function uploadFile()
     {
-        $parentId = $_POST['parentId'];
         $file = $_FILES['file'];
+        $parentId = $_POST['parentId'];
 
-        // Проверка типа файла и его размера
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
-        if (!in_array($file['type'], $allowedTypes)) {
-            echo json_encode(['error' => 'Invalid file type']);
-            return;
+        try {
+            FileValidator::validateFile($file);
+            $this->fileService->uploadFile($file, $parentId);
+
+            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+
+            echo json_encode([
+                'success' => true,
+                'directories' => $updatedData['directories'],
+                'files' => $updatedData['files']
+            ]);
+        } catch (\Exception $e) {
+            echo json_encode([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
         }
-
-        if ($file['size'] > 20000000) { // 20MB лимит
-            echo json_encode(['error' => 'File size exceeds the limit of 20MB']);
-            return;
-        }
-
-        // Сохранение файла в директорию на сервере
-        $uploadDir = __DIR__ . '/../../../storage/uploads';
-        $filePath = $uploadDir . '/' . basename($file['name']);
-
-        if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0777, true); // 0777 - полные права, true - рекурсивное создание директорий
-        }
-
-        if (move_uploaded_file($file['tmp_name'], $filePath)) {
-            // Сохранение данных о файле в базе данных
-            $this->fileRepository->saveFile($file['name'], $parentId, $file['size'], $file['type'], $filePath);
-            echo json_encode(['success' => true]);
-        } else {
-            echo json_encode(['error' => 'File upload failed']);
-        }
-    }
-
-
-    public function downloadFile()
-    {
-        $fileId = $_GET['id'];
-
-        // Получаем информацию о файле из базы данных
-        $file = $this->fileRepository->getFileById($fileId);
-
-        if (!$file['path']) {
-            echo json_encode(['error' => 'File not found']);
-            return;
-        }
-
-        // Заголовки для скачивания файла
-        header('Content-Description: File Transfer');
-        header('Content-Type: ' . $file['mime_type']);
-        header('Content-Disposition: attachment; filename="' . basename($file['path']) . '"');
-        header('Content-Length: ' . filesize($file['path']));
-        header('Pragma: public');
-
-        // Чтение файла и его вывод
-        readfile($file['path']);
-        exit;
     }
 
     public function deleteFile()
@@ -76,36 +46,70 @@ class FileController
         $data = json_decode(file_get_contents('php://input'), true);
         $fileId = $data['id'];
 
-        // Получаем информацию о файле из базы данных
-        $file = $this->fileRepository->getFileById($fileId);
+        try {
+            $this->fileService->deleteFile($fileId);
 
-        if (!$file) {
-            echo json_encode(['error' => 'File not found']);
+            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+
+            echo json_encode([
+                'success' => true,
+                'directories' => $updatedData['directories'],
+                'files' => $updatedData['files']
+            ]);
+        } catch (\Exception $e) {
+            echo json_encode([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    public function downloadFile()
+    {
+        $fileId = $_GET['id'] ?? null;
+
+        if (!$fileId) {
+            echo json_encode(['success' => false, 'error' => 'File ID not provided']);
             return;
         }
 
-        // Удаляем файл с сервера
-        if (file_exists($file['path'])) {
-            unlink($file['path']);
-        } else {
-            echo json_encode(['error' => 'File not found on disk']);
-            return;
+        try {
+            $file = $this->fileService->getFileById($fileId);
+
+            if (!$file) {
+                echo json_encode(['success' => false, 'error' => 'File not found']);
+                return;
+            }
+
+            $filePath = $file['path'];
+            $fileName = $file['name'];
+
+            if (!file_exists($filePath)) {
+                echo json_encode(['success' => false, 'error' => 'File does not exist']);
+                return;
+            }
+
+            header('Content-Description: File Transfer');
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate');
+            header('Pragma: public');
+            header('Content-Length: ' . filesize($filePath));
+
+            readfile($filePath);
+            exit;
+        } catch (\Exception $e) {
+            echo json_encode(['success' => false, 'error' => $e->getMessage()]);
         }
-
-        // Удаляем запись о файле из базы данных
-        $this->fileRepository->deleteFile($fileId);
-
-        echo json_encode(['success' => true]);
     }
 
     public function showImage()
     {
         $fileName = urldecode($_GET['file']);$_GET['file'];
 
-        // Путь к файлу в директории uploads
         $filePath = __DIR__ . '/../../../storage/uploads/' . $fileName;
 
-        // Проверяем, существует ли файл
         if (!file_exists($filePath)) {
             header("HTTP/1.0 404 Not Found");
             echo "File not found";

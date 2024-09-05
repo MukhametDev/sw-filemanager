@@ -2,56 +2,41 @@
 
 namespace App\Controllers\Api;
 
-use App\DB\Database;
-use App\Repository\DirectoryRepository;
-use App\Repository\FileRepository;
+use App\Services\DirectoryService;
+use App\Validators\DirectoryValidator;
 
 class FolderController
 {
-    private $directoryRepository;
-    private $fileRepository;
+    private $directoryService;
 
-    public function __construct(Database $db)
+    public function __construct()
     {
-        $this->fileRepository = new FileRepository($db);
-        $this->directoryRepository = new DirectoryRepository($db);
+        $this->directoryService = new DirectoryService();
     }
 
     public function add()
     {
         $input = json_decode(file_get_contents('php://input'), true);
-        $name = $input['folderName'] ?? '';
+        $name = $input['folderName'];
         $parentId = $input['parentId'] ?? null;
 
-        if ($name) {
-            $directoryId = $this->directoryRepository->createDirectory($name, $parentId);
+        try {
+            DirectoryValidator::validateName($name);
+            $this->directoryService->createDirectory($name, $parentId);
 
-            // Получаем все директории и файлы после добавления новой директории
-            $directories = $this->directoryRepository->getAllDirectories();
-            $files = $this->fileRepository->getAllFiles();
+            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
 
             echo json_encode([
                 'success' => true,
-                'directories' => $directories,
-                'files' => $files
+                'directories' => $updatedData['directories'],
+                'files' => $updatedData['files']
             ]);
-        } else {
+        } catch (\Exception $e) {
             echo json_encode([
                 'success' => false,
-                'message' => 'Имя директории не может быть пустым'
+                'error' => $e->getMessage()
             ]);
         }
-    }
-
-    public function  getDirectories()
-    {
-        $directories = $this->directoryRepository->getAllDirectories();
-        $files = $this->fileRepository->getAllFiles();
-        echo json_encode([
-            'success' => true,
-            'directories' => $directories,
-            'files' => $files
-        ]);
     }
 
     public function deleteFolder()
@@ -59,17 +44,40 @@ class FolderController
         $data = json_decode(file_get_contents('php://input'), true);
         $folderId = $data['id'];
 
-        // Получаем информацию о директории из базы данных
-        $directory = $this->directoryRepository->getDirectoryById($folderId);
+        try {
+            $this->directoryService->deleteDirectoryWithContents($folderId);
 
-        if (!$directory) {
-            echo json_encode(['error' => 'Directory not found']);
-            return;
+            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+
+            echo json_encode([
+                'success' => true,
+                'directories' => $updatedData['directories'],
+                'files' => $updatedData['files']
+            ]);
+        } catch (\Exception $e) {
+            echo json_encode([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
         }
-
-        // Рекурсивно удаляем все файлы и поддиректории
-        $this->directoryRepository->deleteDirectoryWithContents($folderId);
-
-        echo json_encode(['success' => true]);
     }
+
+    public function getDirectories()
+    {
+        try {
+            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+
+            echo json_encode([
+                'success' => true,
+                'directories' => $updatedData['directories'],
+                'files' => $updatedData['files']
+            ]);
+        } catch (\Exception $e) {
+            echo json_encode([
+                'success' => false,
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
 }

@@ -49,3 +49,6 @@ services:
 networks:
   sw:
     driver: bridge
+
+volumes:
+  mysql-data:

@@ -9,8 +9,8 @@ use App\Models\FileModel;
 class FileRepository
 {
     private $db;
-    public function __construct(Database $db) {
-        $this->db = $db;
+    public function __construct() {
+        $this->db = Database::getInstance();
     }
 
     public function getFileById($id): array | bool | null
