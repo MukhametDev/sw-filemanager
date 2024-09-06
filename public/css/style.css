@@ -4,16 +4,15 @@ body {
     color: black;
 }
 
-.wrapper {
-    max-width: 1230px;
-    margin: 0 auto;
-    padding: 10px 15px;
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 15px 30px;
+    gap: 20px;
 }
 
-.wrapper__blocs {
-    display: flex;
-    gap: 58px;
-}
 
 .sidebar {
     flex: 1 0 50%;
@@ -23,7 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 680px;
+    height: 900px;
 }
 
 .sidebar__top:not(:last-child) {
@@ -41,6 +40,7 @@ body {
     border-radius: 8px;
     background: rgb(255, 255, 255);
     padding: 5px 20px;
+    width: 100%;
 }
 
 .sidebar__directories {
@@ -65,15 +65,14 @@ body {
     background-size: contain;
     margin-right: 8px;
 }
-/* Выделение выбранной директории */
+
 .sidebar__directory.selected {
-    background-color: #e0e0e0; /* Светлый фон для выделения */
-    border-left: 4px solid #007bff; /* Синяя линия слева для выделения */
+    background-color: #e0e0e0; 
+    border-left: 4px solid #007bff; 
 }
 
-/* Стиль для папок, когда они активны (можно добавить для других состояний) */
 .sidebar__directory.active {
-    background-color: #d1d1d1; /* Альтернативный фон для активного состояния */
+    background-color: #d1d1d1; 
 }
 .sidebar__file {
     padding: 8px;
@@ -91,10 +90,10 @@ body {
     background-size: contain;
     margin-right: 8px;
 }
-/* Выделение выбранного файла */
+
 .sidebar__file.selected {
-    background-color: #e0e0e0; /* Светлый фон для выделения */
-    border-left: 4px solid #007bff; /* Синяя линия слева для выделения */
+    background-color: #e0e0e0;
+    border-left: 4px solid #007bff; 
     word-break: break-all;
 }
 
@@ -137,17 +136,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 680px;
+    height: 900px;
 }
 
 .content__top {
     display: flex;
     justify-content: space-between;
     gap : 40px;
-}
-
-.content__top:not(:last-child) {
-    margin-bottom: 33px;
 }
 
 .content__title {
@@ -174,7 +169,6 @@ body {
     border-color: #ddd;
 }
 
-/* Активное состояние для кнопок */
 .content__btn.active {
     background-color: #007bff;
     color: #fff;
@@ -185,46 +179,42 @@ body {
 }
 
 .content__bottom {
-    /*max-height: 600px;*/
-    /*max-width: 400px;*/
-    align-self: center;
+    align-self: center; 
 }
 
 .img {
-    max-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .no-img {
-    width: 500px;
-    height: 500px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1330px) {
+    .main {
+        flex-wrap: wrap;
+    }
+    .content, .sidebar {
+        height: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    .wrapper__blocs {
+    .main {
         flex-direction: column;
-        gap: 20px;
+        align-items:stretch;
     }
 
     .sidebar, .content {
-        flex: 1 0 100%;
-    }
-
-    .no-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .no-img {
-        width: 500px;
-        height: 500px;
-        object-fit: contain;
+        height: 100%;
     }
 }
 
-@media (max-width: 630px) {
+@media (max-width: 700px) {
     .wrapper {
         font-size: 14px;
     }
@@ -243,24 +233,12 @@ body {
         text-align: center;
     }
 
-    .no-img {
-        width: 400px;
-        height: 400px;
-        object-fit: contain;
-    }
-
     .sidebar__btn {
         padding: 4px 8px;
     }
 }
 
 @media (max-width: 400px) {
-    .no-img {
-        width: 300px;
-        height: 300px;
-        object-fit: contain;
-    }
-
     .sidebar__btns {
         flex-direction: column;
     }

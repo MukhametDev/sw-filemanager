@@ -3699,3 +3699,1380 @@ Controller: \App\Controllers\Api\FileController, Method: showImage
 Routing: GET /uploads/show
 Controller: \App\Controllers\Api\FileController, Method: showImage
 Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Routing: GET /favicon.ico
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /api/download-file
+Controller: \App\Controllers\Api\FileController, Method: downloadFile
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Routing: GET /favicon.ico
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /uploads/show
+Controller: \App\Controllers\Api\FileController, Method: showImage

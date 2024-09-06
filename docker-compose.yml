@@ -1,8 +1,8 @@
 services:
   sw-php:
     build:
-      context: ../project
-      dockerfile: ../project/.docker/php/Dockerfile
+      context: ../filemanager
+      dockerfile: ../filemanager/.docker/php/Dockerfile
     volumes:
       - ./:/var/www
       - ./vendor:/var/www/vendor
