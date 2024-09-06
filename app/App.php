@@ -18,15 +18,11 @@ class App
     public function run()
     {
         try {
-            // Загрузка маршрутов
             $this->loadRoutes();
-//            $this->loadApiRoutes();
 
-            // Получение текущего HTTP-метода и URI
             $method = $_SERVER['REQUEST_METHOD'];
             $uri = $this->getRequestUri();
 
-            // Обработка маршрута с передачей $db
             $this->router->route($method, $uri, $this->db);
         } catch (\Exception $e) {
             \App\View\View::renderError($e->getMessage());

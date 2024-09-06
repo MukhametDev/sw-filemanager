@@ -15,17 +15,15 @@ class FileService
 
     public function uploadFile(array $file, int $parentId): void
     {
-        // Валидация файла
         $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
         if (!in_array($file['type'], $allowedTypes)) {
             throw new \Exception("Недопустимый тип файла");
         }
 
-        if ($file['size'] > 20000000) { // 20MB
+        if ($file['size'] > 20000000) {
             throw new \Exception("Размер файла превышает 20MB");
         }
 
-        // Сохранение файла
         $uploadDir = __DIR__ . '/../../storage/uploads';
         $filePath = $uploadDir . '/' . basename($file['name']);
 
@@ -37,13 +35,11 @@ class FileService
             throw new \Exception("Ошибка загрузки файла");
         }
 
-        // Сохранение данных о файле в базе данных
         $this->fileRepository->saveFile($file['name'], $parentId, $file['size'], $file['type'], $filePath);
     }
 
     public function deleteFile(int $fileId): void
     {
-        // Логика удаления файла
         $file = $this->fileRepository->getFileById($fileId);
         if (!$file) {
             throw new \Exception("Файл не найден");

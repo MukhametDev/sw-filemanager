@@ -18,7 +18,6 @@ class DirectoryService
 
     public function createDirectory(string $name, ?int $parentId): int
     {
-        // Логика создания директории
         if (empty($name)) {
             throw new \Exception("Имя директории не может быть пустым");
         }
@@ -28,13 +27,11 @@ class DirectoryService
 
     public function deleteDirectoryWithContents(int $directoryId): void
     {
-        // Логика удаления директории с содержимым
         $this->directoryRepository->deleteDirectoryWithContents($directoryId);
     }
 
     public function getAllDirectoriesAndFiles(): array
     {
-        // Получаем все директории и файлы
         $directories = $this->directoryRepository->getAllDirectories();
         $files = $this->fileRepository->getAllFiles();
 

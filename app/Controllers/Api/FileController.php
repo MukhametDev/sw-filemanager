@@ -106,7 +106,7 @@ class FileController
 
     public function showImage()
     {
-        $fileName = urldecode($_GET['file']);$_GET['file'];
+        $fileName = urldecode($_GET['file']);
 
         $filePath = __DIR__ . '/../../../storage/uploads/' . $fileName;
 
@@ -116,14 +116,11 @@ class FileController
             return;
         }
 
-        // Определяем MIME тип файла
         $mimeType = mime_content_type($filePath);
 
-        // Устанавливаем заголовки
         header('Content-Type: ' . $mimeType);
         header('Content-Length: ' . filesize($filePath));
 
-        // Отдаем файл
         readfile($filePath);
         exit;
     }

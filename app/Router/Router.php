@@ -10,6 +10,7 @@ require __DIR__ . '/../helpers/helper.php';
 class Router
 {
     use Singleton;
+
     private static $router;
 
     public function __construct(private array $routes = [])
@@ -25,7 +26,7 @@ class Router
         return self::$router;
     }
 
-    public  function get(string $uri, string $action): void
+    public function get(string $uri, string $action): void
     {
 
         $this->register($uri, $action, "GET");

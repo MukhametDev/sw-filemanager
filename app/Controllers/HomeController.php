@@ -39,10 +39,8 @@ class HomeController
                 $html .= '<li class="sidebar__directory" data-id="' . $directory->id . '">'
                     . htmlspecialchars($directory->name);
 
-                // Рекурсивный вызов для дочерних директорий
                 $html .= $this->buildTreeHtml($directories, $files, $directory->id);
 
-                // Добавление файлов в текущую директорию
                 $html .= '<ul class="sidebar__directories">';
                 foreach ($files as $file) {
                     if ($file->directory_id == $directory->id) {
@@ -61,5 +59,4 @@ class HomeController
 
         return $html;
     }
-
 }

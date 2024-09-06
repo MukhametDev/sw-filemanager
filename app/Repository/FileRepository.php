@@ -9,7 +9,8 @@ use App\Models\FileModel;
 class FileRepository
 {
     private $db;
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = Database::getInstance();
     }
 
@@ -25,7 +26,6 @@ class FileRepository
         $sql = "SELECT * FROM `files`";
         $data = $this->db->fetchAll($sql);
 
-        // Предполагая, что вы хотите вернуть массив объектов Directory
         $files = [];
         foreach ($data as $row) {
             $files[] = new FileModel(
