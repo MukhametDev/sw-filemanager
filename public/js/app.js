@@ -38,72 +38,53 @@ window.addEventListener('DOMContentLoaded', () => {
         return path;
     }
 
-    document.querySelector('.sidebar__directories').addEventListener('click', (e) => {
+    document.querySelector('.sidebar__directories').addEventListener('click', handleDirectoryClick);
+
+    function handleDirectoryClick(e) {
         const clickedDirectory = e.target.closest('.sidebar__directory');
         const clickedFile = e.target.closest('.sidebar__file');
 
         if (clickedDirectory && !clickedFile) {
-            // Снимаем выделение со всех директорий
             document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
             clickedDirectory.classList.add('selected');
-
-            // Снимаем выделение со всех файлов
             document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
 
-            // Получаем ID выбранной директории
             selectedDirectoryId = clickedDirectory.dataset.id;
             selectedFileId = null;
 
-            // Получаем данные о директориях
             const directoriesUl = clickedDirectory.closest('ul');
             const allDirectoriesData = directoriesUl && directoriesUl.dataset.directories
                 ? JSON.parse(directoriesUl.dataset.directories)
                 : [];
 
-            // Генерируем путь к выбранной директории
             const selectedPath = getDirectoryPath(selectedDirectoryId, allDirectoriesData);
-
-            // Обновляем текст выбранного пути
             selectedPathText.textContent = `Выбрано: ${selectedPath}`;
 
-            // Обновляем изображение предпросмотра
             previewImage.src = '/images/no-photo.png';
-
-            // Обновляем интерфейс кнопок
             uploadButton();
         }
 
         if (clickedFile) {
-            // Снимаем выделение со всех файлов
             document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
             clickedFile.classList.add('selected');
-
-            // Снимаем выделение со всех директорий
             document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
 
-            // Получаем имя файла
             const fileName = clickedFile.textContent;
-
-            // Получаем данные о директориях
-            const directoriesUl = clickedFile.closest('ul');
+            const directoriesUl = clickedFile.closest('ul').previousElementSibling;
             const allDirectoriesData = directoriesUl && directoriesUl.dataset.directories
                 ? JSON.parse(directoriesUl.dataset.directories)
                 : [];
 
-            // Получаем ID родительской директории
             const parentDirectory = clickedFile.closest('.sidebar__directory');
             if (parentDirectory) {
                 selectedDirectoryId = parentDirectory.dataset.id;
             }
 
-            // Генерируем путь к выбранному файлу
             const selectedPath = getDirectoryPath(selectedDirectoryId, allDirectoriesData);
-            selectedPathText.textContent = `Выбрано: ${selectedPath ? selectedPath + '/' : ''}${fileName}`;
+            selectedPathText.textContent = `Выбрано: ${selectedPath}/${fileName}`;
 
-            // Обновляем ID выбранного файла
             selectedFileId = clickedFile.dataset.id;
 
-            // Обновляем изображение предпросмотра для файлов изображений
             const filePath = `/uploads/show?file=${encodeURIComponent(fileName)}`;
             if (fileName.match(/\.(jpg|jpeg|png|gif)$/)) {
                 previewImage.src = filePath;
@@ -113,13 +94,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 previewImage.classList.add('no-img');
             }
 
-            // Обновляем интерфейс кнопок
             uploadButton();
         }
-    });
+    }
 
     function renderDirectoryTree(directories, files, parentId = null) {
-        let html = '<ul data-directories=\'' + JSON.stringify(directories) + '\'>';
+        let html = `<ul data-directories='${JSON.stringify(directories)}'>`;
         directories.forEach(directory => {
             if (directory.parent_id === parentId) {
                 html += `<li class="sidebar__directory" data-id="${directory.id}">${directory.name}`;
@@ -142,84 +122,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function updateDirectoryTree(data) {
         const treeHtml = renderDirectoryTree(data.directories, data.files);
-        document.querySelector('.sidebar__directories').innerHTML = treeHtml;
-        document.querySelector('.sidebar__directories').addEventListener('click', (e) => {
-            const clickedDirectory = e.target.closest('.sidebar__directory');
-            const clickedFile = e.target.closest('.sidebar__file');
+        const sidebarDirectories = document.querySelector('.sidebar__directories');
+        sidebarDirectories.innerHTML = treeHtml;
 
-            if (clickedDirectory && !clickedFile) {
-                document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
-                clickedDirectory.classList.add('selected');
-                document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
-                selectedDirectoryId = clickedDirectory.dataset.id;
-                selectedFileId = null;
+        // Перепривязываем обработчик событий после обновления дерева
+        sidebarDirectories.removeEventListener('click', handleDirectoryClick);
+        sidebarDirectories.addEventListener('click', handleDirectoryClick);
 
-                const directoriesUl = clickedDirectory.closest('ul');
-                const allDirectoriesData = directoriesUl ? directoriesUl.dataset.directories : '[]';
-
-                try {
-                    const allDirectories = JSON.parse(allDirectoriesData || '[]');
-                    const selectedPath = getDirectoryPath(selectedDirectoryId, allDirectories);
-
-                    selectedPathText.textContent = `Выбрано: ${selectedPath}`;
-                    previewImage.src = '/images/no-photo.png';
-                    uploadButton();
-                } catch (error) {
-                    console.error('Failed to parse directories data:', error);
-                }
-            }
-
-            if (clickedFile) {
-                document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
-                clickedFile.classList.add('selected');
-                document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
-
-                const fileName = clickedFile.textContent;
-                const directoriesUl = clickedFile.closest('ul');
-                const allDirectoriesData = directoriesUl && directoriesUl.dataset.directories ? JSON.parse(directoriesUl.dataset.directories) : [];
-
-                const parentDirectory = clickedFile.closest('.sidebar__directory');
-                if (parentDirectory) {
-                    selectedDirectoryId = parentDirectory.dataset.id;
-                }
-
-                const selectedPath = getDirectoryPath(selectedDirectoryId, allDirectoriesData);
-                console.log(selectedPath)
-                selectedPathText.textContent = `Выбрано: ${selectedPath ? selectedPath + '/' : ''}${fileName}`;
-
-                selectedFileId = clickedFile.dataset.id;
-
-                const filePath = `/uploads/show?file=${encodeURIComponent(fileName)}`;
-                if (fileName.match(/\.(jpg|jpeg|png|gif)$/)) {
-                    previewImage.src = filePath;
-                    previewImage.classList.add('img');
-                } else {
-                    previewImage.src = '/images/no-photo.png';
-                    previewImage.classList.add('no-img');
-                }
-                uploadButton();
-            }
-            if (clickedFile) {
-                document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
-                clickedFile.classList.add('selected');
-                document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
-
-                const fileName = clickedFile.textContent;
-                const filePath = `storage/${fileName}`;
-
-                selectedPathText.textContent = `Выбрано: ${getDirectoryPath(selectedDirectoryId, JSON.parse(allDirectoriesData))}/${fileName}`;
-                selectedFileId = clickedFile.dataset.id;
-
-                if (fileName.match(/\.(jpg|jpeg|png|gif)$/)) {
-                    previewImage.src = `/uploads/show?file=${encodeURIComponent(fileName)}`;
-                    previewImage.classList.add('img');
-                } else {
-                    previewImage.src = '/images/no-photo.png';
-                    previewImage.classList.add('no-img');
-                }
-
-            }
-        });
         uploadButton();
     }
 
@@ -262,12 +171,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
         fileInput.onchange = function () {
             const file = fileInput.files[0];
-            console.log(file.size);
             if (file) {
-                // Проверяем размер файла
-                if (file.size > 20 * 1024 * 1024) { // 20MB
+                if (file.size > 20 * 1024 * 1024) {
                     alert("Файл слишком большой! Пожалуйста, выберите файл размером не более 20MB.");
-                    return; // Выходим из функции, чтобы не продолжать загрузку
+                    return;
                 }
 
                 const formData = new FormData();

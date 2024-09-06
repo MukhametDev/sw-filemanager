@@ -43,7 +43,7 @@ class HomeController
                 $html .= $this->buildTreeHtml($directories, $files, $directory->id);
 
                 // Добавление файлов в текущую директорию
-                $html .= '<ul>';
+                $html .= '<ul class="sidebar__directories">';
                 foreach ($files as $file) {
                     if ($file->directory_id == $directory->id) {
                         $html .= '<li class="sidebar__file" data-id="' . $file->id . '"> '

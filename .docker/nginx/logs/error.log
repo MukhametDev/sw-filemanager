@@ -4045,3 +4045,44 @@
 2024/09/05 07:27:31 [notice] 1#1: signal 17 (SIGCHLD) received from 30
 2024/09/05 07:27:31 [notice] 1#1: worker process 30 exited with code 0
 2024/09/05 07:27:31 [notice] 1#1: exit
+2024/09/05 07:50:37 [notice] 1#1: using the "epoll" event method
+2024/09/05 07:50:37 [notice] 1#1: nginx/1.25.4
+2024/09/05 07:50:37 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/09/05 07:50:37 [notice] 1#1: OS: Linux 5.15.153.1-microsoft-standard-WSL2
+2024/09/05 07:50:37 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2024/09/05 07:50:37 [notice] 1#1: start worker processes
+2024/09/05 07:50:37 [notice] 1#1: start worker process 28
+2024/09/05 07:50:37 [notice] 1#1: start worker process 29
+2024/09/05 07:50:37 [notice] 1#1: start worker process 30
+2024/09/05 07:50:37 [notice] 1#1: start worker process 31
+2024/09/05 07:53:31 [warn] 30#30: *4 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000001, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/05 07:55:20 [warn] 31#31: *14 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000002, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/05 07:55:25 [warn] 29#29: *15 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000003, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/05 07:55:48 [warn] 29#29: *15 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000004, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/05 07:56:00 [warn] 29#29: *15 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000005, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "localhost:3000", referrer: "http://localhost:3000/"
+2024/09/05 10:14:16 [warn] 29#29: *304 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000006, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "192.168.88.13:3000", referrer: "http://192.168.88.13:3000/"
+2024/09/05 10:14:32 [warn] 29#29: *304 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000007, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "192.168.88.13:3000", referrer: "http://192.168.88.13:3000/"
+2024/09/05 10:16:34 [warn] 29#29: *338 a client request body is buffered to a temporary file /var/cache/nginx/client_temp/0000000008, client: 172.22.0.1, server: , request: "POST /api/upload-file HTTP/1.1", host: "192.168.88.13:3000", referrer: "http://192.168.88.13:3000/"
+2024/09/05 10:17:20 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2024/09/05 10:17:20 [notice] 28#28: gracefully shutting down
+2024/09/05 10:17:20 [notice] 29#29: gracefully shutting down
+2024/09/05 10:17:20 [notice] 30#30: gracefully shutting down
+2024/09/05 10:17:20 [notice] 31#31: gracefully shutting down
+2024/09/05 10:17:20 [notice] 28#28: exiting
+2024/09/05 10:17:20 [notice] 29#29: exiting
+2024/09/05 10:17:20 [notice] 30#30: exiting
+2024/09/05 10:17:20 [notice] 31#31: exiting
+2024/09/05 10:17:20 [notice] 28#28: exit
+2024/09/05 10:17:20 [notice] 29#29: exit
+2024/09/05 10:17:20 [notice] 30#30: exit
+2024/09/05 10:17:20 [notice] 31#31: exit
+2024/09/05 10:17:20 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2024/09/05 10:17:20 [notice] 1#1: worker process 28 exited with code 0
+2024/09/05 10:17:20 [notice] 1#1: worker process 30 exited with code 0
+2024/09/05 10:17:20 [notice] 1#1: signal 29 (SIGIO) received
+2024/09/05 10:17:20 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2024/09/05 10:17:20 [notice] 1#1: worker process 31 exited with code 0
+2024/09/05 10:17:20 [notice] 1#1: signal 29 (SIGIO) received
+2024/09/05 10:17:20 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2024/09/05 10:17:20 [notice] 1#1: worker process 29 exited with code 0
+2024/09/05 10:17:20 [notice] 1#1: exit

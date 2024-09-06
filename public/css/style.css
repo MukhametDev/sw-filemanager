@@ -78,6 +78,7 @@ body {
 .sidebar__file {
     padding: 8px;
     cursor: pointer;
+    word-break: break-all;
 }
 
 .sidebar__file::before {
@@ -94,6 +95,7 @@ body {
 .sidebar__file.selected {
     background-color: #e0e0e0; /* Светлый фон для выделения */
     border-left: 4px solid #007bff; /* Синяя линия слева для выделения */
+    word-break: break-all;
 }
 
 .sidebar__btns {
@@ -152,6 +154,7 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
+    word-break: break-all;
 }
 
 .content__btn {
