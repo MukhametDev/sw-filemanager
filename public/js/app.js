@@ -2,12 +2,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const input = document.querySelector('.sidebar__input');
     const folderBtn = document.querySelector('.sidebar__btn:nth-child(1)');
     const fileBtn = document.querySelector('.sidebar__btn:nth-child(2)');
-    const deleteBtn = document.querySelector('.sidebar__btn:nth-child(3)');
+    const deleteBtn = document.querySelector('.sidebar__btn:nth-child(4)');
     const downloadBtn = document.querySelector('.content__btn');
     const selectedPathText = document.querySelector('.content__title');
     const previewImage = document.querySelector('.content__bottom img');
     const errorSpan = document.querySelector('.sidebar__error');
-    
+    const errorUploadFile = document.querySelector('.sidebar__error-file');
+
     let selectedDirectoryId = null;
     let selectedFileId = null;
 
@@ -127,7 +128,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const sidebarDirectories = document.querySelector('.sidebar__directories');
         sidebarDirectories.innerHTML = treeHtml;
 
-        // Перепривязываем обработчик событий после обновления дерева
         sidebarDirectories.removeEventListener('click', handleDirectoryClick);
         sidebarDirectories.addEventListener('click', handleDirectoryClick);
 
@@ -156,7 +156,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     uploadButton();
                 } else {
                     errorSpan.style.display = 'block';
-                    // alert('Error:' + data.error);
                     input.value = '';
                 }
             })
@@ -177,11 +176,6 @@ window.addEventListener('DOMContentLoaded', () => {
         fileInput.onchange = function () {
             const file = fileInput.files[0];
             if (file) {
-                if (file.size > 20 * 1024 * 1024) {
-                    alert("Файл слишком большой! Пожалуйста, выберите файл размером не более 20MB.");
-                    return;
-                }
-
                 const formData = new FormData();
                 formData.append('file', file);
                 formData.append('parentId', selectedDirectoryId);
@@ -190,19 +184,36 @@ window.addEventListener('DOMContentLoaded', () => {
                     method: 'POST',
                     body: formData
                 })
-                    .then(response => response.json())
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('File upload failed');
+                        }
+                        return response.json();
+                    })
                     .then(data => {
                         if (data.success) {
                             fetch('/api/get-directories')
                                 .then(response => response.json())
                                 .then(data => {
+                                    errorUploadFile.style.display = 'none';
                                     updateDirectoryTree(data);
                                 });
                         } else {
-                            alert(data.error);
+                            throw new Error(data.error || 'Unknown error');
                         }
                     })
-                    .catch(error => console.error('Error:', error));
+                    .catch(error => {
+                        errorUploadFile.style.display = 'none';
+
+                        if (file.size > 20 * 1024 * 1024) { 
+                            errorUploadFile.textContent = "Размер файла не должен превышать 20 МБ";
+                        } else if (!file.name.match(/\.(jpg|jpeg|png|gif)$/)) { 
+                            errorUploadFile.textContent = "Недопустимый тип файла";
+                        } else {
+                            errorUploadFile.textContent = "Ошибка загрузки файла";
+                        }
+                        errorUploadFile.style.display = 'block';
+                    });
             }
         };
 

@@ -18,6 +18,7 @@
                     <div class="sidebar__btns">
                         <button class="sidebar__btn">Добавить папку</button>
                         <button class="sidebar__btn">Добавить файл</button>
+                        <span class="sidebar__error-file">Файл весит больше 20MB</span>
                         <button class="sidebar__btn">Удалить</button>
                     </div>
                 </form>

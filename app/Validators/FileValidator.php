@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Validators;
 
 class FileValidator

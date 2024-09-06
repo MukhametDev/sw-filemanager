@@ -13,7 +13,6 @@ body {
     gap: 20px;
 }
 
-
 .sidebar {
     flex: 1 0 50%;
     border: 1px solid black;
@@ -30,6 +29,14 @@ body {
     top: 10%;
     left:9%; 
     color: red;
+    display: none;
+}
+
+.sidebar__error-file {
+    color: red;
+    position: absolute;
+    top: 10%;
+    left: 30%;
     display: none;
 }
 
@@ -228,7 +235,7 @@ body {
     }
     .sidebar__form {
         flex-direction: column;
-        gap: 10px;
+        gap: 25px;
     }
 
     .content__top {
@@ -244,10 +251,23 @@ body {
     .sidebar__btn {
         padding: 4px 8px;
     }
+
+    .sidebar__error {
+        font-size: 12px;
+        top: 8%;
+        left: 12%;
+    }
+    .sidebar__error-file {
+        font-size: 12px;
+        top: 8%;
+    }
 }
 
 @media (max-width: 400px) {
     .sidebar__btns {
         flex-direction: column;
+    }
+    .sidebar__error {
+        left: 18%;
     }
 }
