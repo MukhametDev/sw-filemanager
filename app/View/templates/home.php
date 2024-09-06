@@ -14,6 +14,7 @@
             <div class="sidebar__top">
                 <form action="#" class="sidebar__form">
                     <input placeholder="Наименование директории" type="text" class="sidebar__input">
+                    <span class="sidebar__error">Имя слишком длинное</span>
                     <div class="sidebar__btns">
                         <button class="sidebar__btn">Добавить папку</button>
                         <button class="sidebar__btn">Добавить файл</button>

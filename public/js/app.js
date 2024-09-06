@@ -6,6 +6,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const downloadBtn = document.querySelector('.content__btn');
     const selectedPathText = document.querySelector('.content__title');
     const previewImage = document.querySelector('.content__bottom img');
+    const errorSpan = document.querySelector('.sidebar__error');
+    
     let selectedDirectoryId = null;
     let selectedFileId = null;
 
@@ -150,9 +152,12 @@ window.addEventListener('DOMContentLoaded', () => {
                     selectedFileId = null;
                     selectedPathText.textContent = 'Выбрано: ';
                     previewImage.src = '/images/no-photo.png';
+                    errorSpan.style.display = 'none';
                     uploadButton();
                 } else {
-                    console.error('Error:', data.message);
+                    errorSpan.style.display = 'block';
+                    // alert('Error:' + data.error);
+                    input.value = '';
                 }
             })
             .catch(error => console.error('Error:', error));

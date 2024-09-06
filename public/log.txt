@@ -5131,3 +5131,172 @@ Routing: DELETE /api/delete-folder
 Controller: \App\Controllers\Api\FolderController, Method: deleteFolder
 Routing: GET /api/get-directories
 Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /favicon.ico
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: GET /
+Controller: \App\Controllers\HomeController, Method: index
+Routing: GET /api/get-directories
+Controller: \App\Controllers\Api\FolderController, Method: getDirectories
+Routing: GET /favicon.ico
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add
+Routing: POST /api/add-folder
+Controller: \App\Controllers\Api\FolderController, Method: add

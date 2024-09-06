@@ -25,6 +25,14 @@ body {
     height: 900px;
 }
 
+.sidebar__error {
+    position: absolute;
+    top: 10%;
+    left:9%; 
+    color: red;
+    display: none;
+}
+
 .sidebar__top:not(:last-child) {
     margin-bottom: 30px;
 }
