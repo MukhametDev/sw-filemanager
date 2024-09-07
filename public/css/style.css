@@ -1,0 +1,273 @@
+@import url('reset.css');
+
+body {
+    color: black;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 15px 30px;
+    gap: 20px;
+}
+
+.sidebar {
+    flex: 1 0 50%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 900px;
+}
+
+.sidebar__error {
+    position: absolute;
+    top: 10%;
+    left:9%; 
+    color: red;
+    display: none;
+}
+
+.sidebar__error-file {
+    color: red;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    display: none;
+}
+
+.sidebar__top:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.sidebar__form {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sidebar__input {
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 8px;
+    background: rgb(255, 255, 255);
+    padding: 5px 20px;
+    width: 100%;
+}
+
+.sidebar__directories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__directory {
+    position: relative;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sidebar__directory::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/Folder.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+}
+
+.sidebar__directory.selected {
+    background-color: #e0e0e0; 
+    border-left: 4px solid #007bff; 
+}
+
+.sidebar__directory.active {
+    background-color: #d1d1d1; 
+}
+.sidebar__file {
+    padding: 8px;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+.sidebar__file::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/Icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+}
+
+.sidebar__file.selected {
+    background-color: #e0e0e0;
+    border-left: 4px solid #007bff; 
+    word-break: break-all;
+}
+
+.sidebar__btns {
+    display: flex;
+    gap: 20px;
+}
+
+.sidebar__btn {
+    padding: 5px 20px;
+    border-radius: 8px;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidebar__btn:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
+
+.sidebar__btn:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.sidebar__btn.active {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content {
+    flex: 1 0 50%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 900px;
+}
+
+.content__top {
+    display: flex;
+    justify-content: space-between;
+    gap : 40px;
+}
+
+.content__title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    word-break: break-all;
+}
+
+.content__btn {
+    padding: 5px 20px;
+    border-radius: 8px;
+    background-color: #d1d1d1;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content__btn:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.content__btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.content__btn:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
+
+.content__bottom {
+    align-self: center; 
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1330px) {
+    .main {
+        flex-wrap: wrap;
+    }
+    .content, .sidebar {
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        align-items:stretch;
+    }
+
+    .sidebar, .content {
+        height: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        font-size: 14px;
+    }
+    .sidebar__form {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .content__top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .content__btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar__btn {
+        padding: 4px 8px;
+    }
+
+    .sidebar__error {
+        font-size: 12px;
+        top: 8%;
+        left: 12%;
+    }
+    .sidebar__error-file {
+        font-size: 12px;
+        top: 8%;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar__btns {
+        flex-direction: column;
+    }
+    .sidebar__error {
+        left: 18%;
+    }
+}
