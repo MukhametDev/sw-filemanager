@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   sw-php:
     build:
@@ -13,6 +15,10 @@ services:
       - sw-mysql
     networks:
       - sw
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+    command: >
+      sh -c "composer install && composer dump-autoload --optimize && php-fpm"
 
   sw-mysql:
     image: mysql
