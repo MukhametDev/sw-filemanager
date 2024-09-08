@@ -2,15 +2,20 @@
 
 namespace App\Services;
 
-use App\Repository\FileRepository;
+use App\Interfaces\DirectoryServiceInterface;
+use App\Interfaces\FileRepositoryInterface;
+use App\Interfaces\FileServiceInterface;
 
-class FileService
+
+class FileService implements FileServiceInterface
 {
-    private FileRepository $fileRepository;
-    private DirectoryService $directoryService;
+    private FileRepositoryInterface $fileRepository;
+    private DirectoryServiceInterface $directoryService;
 
-    public function __construct(FileRepository $fileRepository, DirectoryService $directoryService)
-    {
+    public function __construct(
+        FileRepositoryInterface $fileRepository,
+        DirectoryServiceInterface $directoryService
+    ) {
         $this->fileRepository = $fileRepository;
         $this->directoryService = $directoryService;
     }

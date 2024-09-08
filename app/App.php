@@ -4,16 +4,19 @@ namespace App;
 
 use App\Router\Router;
 use App\Http\Response;
+use App\Http\Container;
 
 class App
 {
     protected $db;
     protected $router;
+    protected $container;
 
-    public function __construct($db)
+    public function __construct($db, Container $container)
     {
         $this->db = $db;
         $this->router = Router::getInstance();
+        $this->container = $container; // Инициализация контейнера зависимостей
     }
 
     public function run(): void
@@ -24,7 +27,7 @@ class App
             $uri = $this->getRequestUri();
 
             // Запуск маршрутизации с использованием DI и обработки ошибок через Response
-            if (!$this->router->route($method, $uri)) {
+            if (!$this->router->route($method, $uri, $this->container)) {
                 // Если маршрут не найден, возвращаем ответ с ошибкой
                 Response::error('Маршрут не найден', 404);
             }

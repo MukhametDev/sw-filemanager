@@ -3,9 +3,10 @@
 namespace App\Repository;
 
 use App\DB\Database;
+use App\Interfaces\FileRepositoryInterface;
 use App\Models\FileModel;
 
-class FileRepository
+class FileRepository implements FileRepositoryInterface
 {
     private $db;
 

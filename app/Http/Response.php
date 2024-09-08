@@ -2,11 +2,13 @@
 
 namespace App\Http;
 
-class Response
+use App\Interfaces\ResponseInterface;
+
+class Response implements ResponseInterface
 {
-    protected $headers = [];
+    protected array $headers = [];
     protected $body;
-    protected $statusCode = 200;
+    protected int $statusCode = 200;
 
     public function setHeader(string $header): void
     {
@@ -40,7 +42,6 @@ class Response
         exit;
     }
 
-    // Статический метод для создания JSON ответа без вложенности в "data"
     public static function json(array $data, int $statusCode = 200): void
     {
         $response = new self();
@@ -49,16 +50,13 @@ class Response
         $response->send();
     }
 
-    // Статический метод для успешного ответа без обёртки "data"
     public static function success(array $data = [], int $statusCode = 200): void
     {
-        // Убираем обёртку "success" и "data", возвращаем данные как есть
         self::json($data, $statusCode);
     }
 
-    // Статический метод для ответа с ошибкой
     public static function error(string $message, int $statusCode = 400): void
     {
-        self::json(['success' => false, 'error' => $message], $statusCode);
+        self::json(['error' => $message], $statusCode);
     }
 }

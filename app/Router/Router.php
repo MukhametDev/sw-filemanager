@@ -3,19 +3,19 @@
 namespace App\Router;
 
 use App\Http\Container;
-use App\Traits\Singleton;
 use App\Http\Response;
+use App\Traits\Singleton;
 
 class Router
 {
     use Singleton;
 
-    private $routes = [];
+    private array $routes = [];
     private Container $container;
 
     public function __construct()
     {
-        $this->container = new Container(); // Инициализация контейнера
+        $this->container = new Container(); // Инициализация контейнера зависимостей
     }
 
     public function get(string $uri, string $action): void
@@ -41,7 +41,7 @@ class Router
     protected function register(string $uri, string $action, string $method): void
     {
         $pattern = '#^' . preg_replace('/\{[^\}]+\}/', '([^/]+)', $uri) . '$#';
-        list($controller, $function) = $this->extractAction($action);
+        [$controller, $function] = $this->extractAction($action);
 
         $this->routes[$method][$pattern] = [
             'controller' => $controller,
@@ -51,21 +51,20 @@ class Router
 
     protected function extractAction(string $action, string $separator = '@'): array
     {
-        [$controller, $method] = explode($separator, $action);
-        return [trim($controller), trim($method)];
+        return explode($separator, $action);
     }
 
-    public function route(string $method, string $uri): bool
+    public function route(string $method, string $uri, Container $container): bool
     {
         foreach ($this->routes[$method] ?? [] as $pattern => $result) {
             if (preg_match($pattern, $uri, $matches)) {
-                array_shift($matches);
+                array_shift($matches); // Удаляем первый элемент, так как он содержит весь матч
+
                 $controller = $result['controller'];
                 $method = $result['method'];
 
                 try {
-                    // Используем контейнер для создания экземпляра контроллера с инъекцией зависимостей
-                    $controllerInstance = $this->container->get($controller);
+                    $controllerInstance = $container->get($controller);
 
                     if (method_exists($controllerInstance, $method)) {
                         call_user_func_array([$controllerInstance, $method], $matches);
@@ -79,7 +78,7 @@ class Router
             }
         }
 
-        // Возвращаем false, если маршрут не был найден
+        Response::error("Маршрут не найден для URI: {$uri}", 404);
         return false;
     }
 }

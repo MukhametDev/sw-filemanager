@@ -2,15 +2,20 @@
 
 namespace App\Services;
 
-use App\Repository\DirectoryRepository;
-use App\Repository\FileRepository;
+use App\Interfaces\DirectoryRepositoryInterface;
+use App\Interfaces\DirectoryServiceInterface;
+use App\Interfaces\FileRepositoryInterface;
+use Exception;
 
-class DirectoryService
+class DirectoryService implements DirectoryServiceInterface
 {
-    private DirectoryRepository $directoryRepository;
-    private FileRepository $fileRepository;
+    private DirectoryRepositoryInterface $directoryRepository;
+    private FileRepositoryInterface $fileRepository;
 
-    public function __construct(DirectoryRepository $directoryRepository, FileRepository $fileRepository)
+    public function __construct(
+        DirectoryRepositoryInterface $directoryRepository,
+        FileRepositoryInterface      $fileRepository
+    )
     {
         $this->directoryRepository = $directoryRepository;
         $this->fileRepository = $fileRepository;
@@ -22,11 +27,29 @@ class DirectoryService
             throw new \Exception("Имя директории не может быть пустым");
         }
 
-        return $this->directoryRepository->createDirectory($name, $parentId);
+        $directoryId = $this->directoryRepository->createDirectory($name, $parentId);
+
+        if ($parentId === null) {
+            $parentPath = '';
+        } else {
+            $parentPath = $this->getDirectoryPathById($parentId);
+        }
+
+        $fullPath = __DIR__ . '/../../storage/uploads/' . $parentPath . '/' . $name;
+
+        if (!is_dir($fullPath)) {
+            if (!mkdir($fullPath, 0777, true)) {
+                throw new \Exception("Не удалось создать директорию: " . $fullPath);
+            }
+        }
+
+        return $directoryId;
     }
+
 
     public function deleteDirectoryWithContents(int $directoryId): void
     {
+// Удаление всех файлов из директории
         $files = $this->fileRepository->getFilesByDirectoryId($directoryId);
         foreach ($files as $file) {
             if (file_exists($file['path'])) {
@@ -57,7 +80,7 @@ class DirectoryService
         return ['directories' => $directories, 'files' => $files];
     }
 
-    public function getDirectoryPathById($directoryId): string
+    public function getDirectoryPathById(int $directoryId): string
     {
         $path = '';
         while ($directoryId) {

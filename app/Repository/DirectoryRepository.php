@@ -3,9 +3,10 @@
 namespace App\Repository;
 
 use App\DB\Database;
+use App\Interfaces\DirectoryRepositoryInterface;
 use App\Models\Directory;
 
-class DirectoryRepository
+class DirectoryRepository implements DirectoryRepositoryInterface
 {
     private $db;
 

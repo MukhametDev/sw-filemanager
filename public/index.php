@@ -1,6 +1,5 @@
 <?php
 
-use App\App;
 use App\Http\Response;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -10,9 +9,6 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-// Создание и запуск приложения
-$app = require_once __DIR__ . '/../bootstrap/app.php';
-
 // Установка глобального обработчика исключений
 set_exception_handler(function ($exception) {
     // Централизованная обработка ошибок с использованием Response
@@ -20,6 +16,8 @@ set_exception_handler(function ($exception) {
 });
 
 try {
+    // Загрузка и запуск приложения
+    $app = require_once __DIR__ . '/../bootstrap/app.php';
     $app->run();
 } catch (\Exception $e) {
     // Обработка ошибок с выводом ответа об ошибке через Response

@@ -2,17 +2,21 @@
 
 namespace App\Controllers\Api;
 
-use App\Services\DirectoryService;
+use App\Interfaces\DirectoryServiceInterface;
+use App\Interfaces\ResponseInterface;
 use App\Validators\DirectoryValidator;
-use App\Http\Response;
 
 class FolderController
 {
-    private DirectoryService $directoryService;
+    private DirectoryServiceInterface $directoryService;
+    private ResponseInterface $response;
 
-    public function __construct(DirectoryService $directoryService)
-    {
+    public function __construct(
+        DirectoryServiceInterface $directoryService,
+        ResponseInterface $response
+    ) {
         $this->directoryService = $directoryService;
+        $this->response = $response;
     }
 
     public function add(): void
@@ -21,15 +25,18 @@ class FolderController
         $name = $input['folderName'] ?? '';
         $parentId = $input['parentId'] ?? null;
 
+        DirectoryValidator::validateName($name);
+
         if (empty($name)) {
-            Response::error('Имя директории обязательно', 400);
+            $this->response->error('Имя директории обязательно', 400);
+            return;
         }
 
-        DirectoryValidator::validateName($name);
+
         $this->directoryService->createDirectory($name, $parentId);
 
         $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-        Response::success([
+        $this->response->success([
             'directories' => $updatedData['directories'],
             'files' => $updatedData['files']
         ]);
@@ -41,13 +48,14 @@ class FolderController
         $folderId = $data['id'] ?? null;
 
         if (!$folderId) {
-            Response::error('ID директории не предоставлен', 400);
+            $this->response->error('ID директории не предоставлен', 400);
+            return;
         }
 
         $this->directoryService->deleteDirectoryWithContents($folderId);
 
         $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-        Response::success([
+        $this->response->success([
             'directories' => $updatedData['directories'],
             'files' => $updatedData['files']
         ]);
@@ -56,7 +64,7 @@ class FolderController
     public function getDirectories(): void
     {
         $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-        Response::success([
+        $this->response->success([
             'directories' => $updatedData['directories'],
             'files' => $updatedData['files']
         ]);
