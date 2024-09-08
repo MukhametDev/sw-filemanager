@@ -1,0 +1,5 @@
+vendor/
+.docker/nginx/logs/
+public/adminer.php
+public/log.txt
+.env
