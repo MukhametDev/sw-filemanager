@@ -29,7 +29,7 @@
         </section>
         <section class="content">
             <div class="content__top">
-                <h2 class="content__title">Выбрано: </h2>
+                <h2 class="content__heading">Выбрано: <span class="content__title"></span> </h2>
                 <button class="content__btn">Скачать</button>
             </div>
             <div class="content__bottom">

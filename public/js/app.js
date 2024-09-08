@@ -47,11 +47,11 @@ window.addEventListener('DOMContentLoaded', () => {
         const clickedDirectory = e.target.closest('.sidebar__directory');
         const clickedFile = e.target.closest('.sidebar__file');
 
-        if (clickedDirectory && !clickedFile) {
-            document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
-            clickedDirectory.classList.add('selected');
-            document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
+        // Удаляем класс 'selected' у всех директорий и файлов
+        document.querySelectorAll('.sidebar__directory, .sidebar__file').forEach(item => item.classList.remove('selected'));
 
+        if (clickedDirectory && !clickedFile) {
+            clickedDirectory.classList.add('selected');
             selectedDirectoryId = clickedDirectory.dataset.id;
             selectedFileId = null;
 
@@ -61,18 +61,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 : [];
 
             const selectedPath = getDirectoryPath(selectedDirectoryId, allDirectoriesData);
-            selectedPathText.textContent = `Выбрано: ${selectedPath}`;
+            selectedPathText.textContent = `${selectedPath}`;
 
             previewImage.src = '/images/no-photo.png';
             uploadButton();
         }
 
         if (clickedFile) {
-            document.querySelectorAll('.sidebar__file').forEach(file => file.classList.remove('selected'));
             clickedFile.classList.add('selected');
-            document.querySelectorAll('.sidebar__directory').forEach(dir => dir.classList.remove('selected'));
-
             const fileName = clickedFile.textContent;
+            const fileId = clickedFile.dataset.id;
             const directoriesUl = clickedFile.closest('ul').previousElementSibling;
             const allDirectoriesData = directoriesUl && directoriesUl.dataset.directories
                 ? JSON.parse(directoriesUl.dataset.directories)
@@ -84,17 +82,20 @@ window.addEventListener('DOMContentLoaded', () => {
             }
 
             const selectedPath = getDirectoryPath(selectedDirectoryId, allDirectoriesData);
-            selectedPathText.textContent = `Выбрано: ${selectedPath}/${fileName}`;
+            selectedPathText.textContent = `${selectedPath}/${fileName}`;
 
             selectedFileId = clickedFile.dataset.id;
 
-            const filePath = `/uploads/show?file=${encodeURIComponent(fileName)}`;
+            selectedFileId = fileId;
+            const filePath = `/uploads/show?id=${encodeURIComponent(fileId)}`;
             if (fileName.match(/\.(jpg|jpeg|png|gif)$/)) {
                 previewImage.src = filePath;
                 previewImage.classList.add('img');
+                previewImage.classList.remove('no-img');
             } else {
                 previewImage.src = '/images/no-photo.png';
                 previewImage.classList.add('no-img');
+                previewImage.classList.remove('img');
             }
 
             uploadButton();

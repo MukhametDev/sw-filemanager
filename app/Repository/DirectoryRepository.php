@@ -29,6 +29,15 @@ class DirectoryRepository
         return $directories;
     }
 
+    public function getSubdirectories(int $parentId): ?array
+    {
+        $query = "SELECT * FROM directories WHERE parent_id = :parent_id";
+        $data = $this->db->fetchAll($query, [':parent_id' => $parentId]);
+
+        return $data ?? null;
+    }
+
+
     public function createDirectory($name, $parentId = null)
     {
         $sql = "INSERT INTO `directories` (`name`, `parent_id`) VALUES (:name, :parent_id)";

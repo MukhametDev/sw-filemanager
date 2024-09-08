@@ -27,7 +27,7 @@ body {
 .sidebar__error {
     position: absolute;
     top: 10%;
-    left:9%; 
+    left:9%;
     color: red;
     display: none;
 }
@@ -82,12 +82,14 @@ body {
 }
 
 .sidebar__directory.selected {
-    background-color: #e0e0e0; 
-    border-left: 4px solid #007bff; 
+    color: #404ECC;
 }
-
+.sidebar__directory.selected .sidebar__directory,
+.sidebar__directory.selected .sidebar__file {
+    color: black;
+}
 .sidebar__directory.active {
-    background-color: #d1d1d1; 
+    background-color: #d1d1d1;
 }
 .sidebar__file {
     padding: 8px;
@@ -107,8 +109,7 @@ body {
 }
 
 .sidebar__file.selected {
-    background-color: #e0e0e0;
-    border-left: 4px solid #007bff; 
+    color: #404ECC;
     word-break: break-all;
 }
 
@@ -159,12 +160,15 @@ body {
     justify-content: space-between;
     gap : 40px;
 }
-
-.content__title {
+.content__heading {
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     word-break: break-all;
+}
+
+.content__title {
+    color: #404ECC;
 }
 
 .content__btn {
@@ -194,7 +198,7 @@ body {
 }
 
 .content__bottom {
-    align-self: center; 
+    align-self: center;
 }
 
 .img {

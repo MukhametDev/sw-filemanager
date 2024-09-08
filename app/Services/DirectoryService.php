@@ -27,8 +27,35 @@ class DirectoryService
 
     public function deleteDirectoryWithContents(int $directoryId): void
     {
-        $this->directoryRepository->deleteDirectoryWithContents($directoryId);
+        // Получаем все файлы в директории
+        $files = $this->fileRepository->getFilesByDirectoryId($directoryId);
+        foreach ($files as $file) {
+            // Удаляем каждый файл с диска и из базы данных
+            if (file_exists($file['path'])) {
+                unlink($file['path']);
+            }
+            $this->fileRepository->deleteFile($file['id']);
+        }
+
+        // Получаем все поддиректории
+        $subdirectories = $this->directoryRepository->getSubdirectories($directoryId);
+
+        foreach ($subdirectories as $subdirectory) {
+            // Рекурсивно удаляем каждую поддиректорию
+            $this->deleteDirectoryWithContents($subdirectory['id']);
+        }
+
+        // Удаляем саму директорию с диска
+        $directoryPath = $this->getDirectoryPathById($directoryId);
+        $fullPath = realpath(__DIR__ . '/../../storage/uploads/' . $directoryPath);
+        if (is_dir($fullPath)) {
+            rmdir($fullPath);
+        }
+
+        // Удаляем директорию из базы данных
+        $this->directoryRepository->deleteDirectory($directoryId);
     }
+
 
     public function getAllDirectoriesAndFiles(): array
     {
@@ -37,4 +64,16 @@ class DirectoryService
 
         return ['directories' => $directories, 'files' => $files];
     }
+
+    public function getDirectoryPathById($directoryId)
+    {
+        $path = '';
+        while ($directoryId) {
+            $directory = $this->directoryRepository->getDirectoryById($directoryId);
+            $path = $directory['name'] . '/' . $path;
+            $directoryId = $directory['parent_id'];
+        }
+        return rtrim($path, '/'); // удаляем последний "/"
+    }
+
 }

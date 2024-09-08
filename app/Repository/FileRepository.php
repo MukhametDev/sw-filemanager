@@ -58,4 +58,12 @@ class FileRepository
         $sql = "DELETE FROM `files` WHERE `id` = :id";
         $this->db->execute($sql, [':id' => $fileId]);
     }
+
+    public function getFilesByDirectoryId(int $directoryId): ?array
+    {
+        $query = "SELECT * FROM files WHERE directory_id = :directory_id";
+        $data = $this->db->fetchAll($query, [':directory_id' => $directoryId]);
+        return $data ?? null;
+    }
+
 }
