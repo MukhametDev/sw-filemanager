@@ -87,6 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
             selectedFileId = clickedFile.dataset.id;
 
             selectedFileId = fileId;
+            console.log(fileId)
             const filePath = `/uploads/show?id=${encodeURIComponent(fileId)}`;
             if (fileName.match(/\.(jpg|jpeg|png|gif)$/)) {
                 previewImage.src = filePath;
@@ -146,7 +147,7 @@ window.addEventListener('DOMContentLoaded', () => {
         })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
+                if (data.directories && data.files) {
                     updateDirectoryTree(data);
                     input.value = '';
                     selectedDirectoryId = null;
@@ -162,6 +163,7 @@ window.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error:', error));
     });
+
 
     fileBtn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -187,33 +189,30 @@ window.addEventListener('DOMContentLoaded', () => {
                 })
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error('File upload failed');
+                            throw new Error('Ошибка загрузки файла');
                         }
                         return response.json();
                     })
                     .then(data => {
-                        if (data.success) {
-                            fetch('/api/get-directories')
-                                .then(response => response.json())
-                                .then(data => {
-                                    errorUploadFile.style.display = 'none';
-                                    updateDirectoryTree(data);
-                                });
+                        console.log('Ответ сервера после загрузки файла:', data); // Логируем ответ сервера
+                        if (data.directories && data.files) {
+                            errorUploadFile.style.display = 'none';
+                            updateDirectoryTree(data); // Обновляем дерево директорий
                         } else {
-                            throw new Error(data.error || 'Unknown error');
+                            throw new Error(data.error || 'Неизвестная ошибка');
                         }
                     })
                     .catch(error => {
-                        errorUploadFile.style.display = 'none';
+                        console.error('Ошибка при загрузке файла:', error); // Логируем ошибки
+                        errorUploadFile.style.display = 'block';
 
-                        if (file.size > 20 * 1024 * 1024) { 
+                        if (file.size > 20 * 1024 * 1024) {
                             errorUploadFile.textContent = "Размер файла не должен превышать 20 МБ";
-                        } else if (!file.name.match(/\.(jpg|jpeg|png|gif)$/)) { 
+                        } else if (!file.name.match(/\.(jpg|jpeg|png|gif)$/)) {
                             errorUploadFile.textContent = "Недопустимый тип файла";
                         } else {
-                            errorUploadFile.textContent = "Ошибка загрузки файла";
+                            errorUploadFile.textContent = error.message || "Ошибка загрузки файла";
                         }
-                        errorUploadFile.style.display = 'block';
                     });
             }
         };
@@ -241,23 +240,27 @@ window.addEventListener('DOMContentLoaded', () => {
         })
             .then(response => response.json())
             .then(data => {
-                if (data.success) {
-                    fetch('/api/get-directories')
-                        .then(response => response.json())
-                        .then(data => {
-                            updateDirectoryTree(data);
-                            selectedDirectoryId = null;
-                            selectedFileId = null;
-                            selectedPathText.textContent = 'Выбрано: ';
-                            previewImage.src = '/images/no-photo.png';
-                            uploadButton();
-                        });
-                } else {
+                // Проверяем, что данные успешно получены и содержат нужные ключи
+                if (data.directories && data.files) {
+                    updateDirectoryTree(data);
+                    selectedDirectoryId = null;
+                    selectedFileId = null;
+                    previewImage.src = '/images/no-photo.png';
+                    uploadButton();
+                } else if (data.error) {
+                    // Если есть ошибка в ответе, показываем её
                     alert(data.error);
+                } else {
+                    // Если данные не содержат ожидаемых ключей, показываем общее сообщение об ошибке
+                    alert('Неизвестная ошибка, данные не содержат необходимых ключей.');
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Произошла ошибка при обработке запроса.');
+            });
     });
+
 
     downloadBtn.addEventListener('click', function (e) {
         e.preventDefault();

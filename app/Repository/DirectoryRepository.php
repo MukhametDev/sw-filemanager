@@ -8,12 +8,13 @@ use App\Models\Directory;
 class DirectoryRepository
 {
     private $db;
+
     public function __construct()
     {
         $this->db = Database::getInstance();
     }
 
-    public function getAllDirectories()
+    public function getAllDirectories(): array
     {
         $sql = "SELECT * FROM `directories`";
         $data = $this->db->fetchAll($sql);
@@ -29,16 +30,13 @@ class DirectoryRepository
         return $directories;
     }
 
-    public function getSubdirectories(int $parentId): ?array
+    public function getSubdirectories(int $parentId): array
     {
         $query = "SELECT * FROM directories WHERE parent_id = :parent_id";
-        $data = $this->db->fetchAll($query, [':parent_id' => $parentId]);
-
-        return $data ?? null;
+        return $this->db->fetchAll($query, [':parent_id' => $parentId]);
     }
 
-
-    public function createDirectory($name, $parentId = null)
+    public function createDirectory($name, $parentId = null): int
     {
         $sql = "INSERT INTO `directories` (`name`, `parent_id`) VALUES (:name, :parent_id)";
         $params = [
@@ -50,66 +48,20 @@ class DirectoryRepository
         return $this->getLastInsertId();
     }
 
-    public function getFilesByDirectoryId($directoryId)
-    {
-        $sql = "SELECT * FROM `files` WHERE `directory_id` = :directory_id";
-        $data = $this->db->fetchAll($sql, [':directory_id' => $directoryId]);
-
-        return $data;
-    }
-    public function getDirectoryById($id)
+    public function getDirectoryById($id): ?array
     {
         $sql = "SELECT * FROM `directories` WHERE `id` = :id";
-        $data = $this->db->fetchAssoc($sql, [':id' => $id]);
-
-        return $data;
+        return $this->db->fetchAssoc($sql, [':id' => $id]);
     }
 
-    public function getSubdirectoriesByDirectoryId($directoryId)
-    {
-        $sql = "SELECT * FROM `directories` WHERE `parent_id` = :parent_id";
-        $data = $this->db->fetchAll($sql, [':parent_id' => $directoryId]);
-
-        return $data;
-    }
-    public function getlastInsertId()
-    {
-        return $this->db->getLastInsertId();
-    }
-
-    public function deleteDirectoryWithContents($directoryId)
-    {
-        $subdirectories = $this->getSubdirectoriesByDirectoryId($directoryId);
-
-        foreach ($subdirectories as $subdirectory) {
-            $this->deleteDirectoryWithContents($subdirectory['id']);
-        }
-
-        $files = $this->getFilesByDirectoryId($directoryId);
-
-        foreach ($files as $file) {
-            if (file_exists($file['path'])) {
-                if (!unlink($file['path'])) {
-                    error_log("Failed to delete file: " . $file['path']);
-                }
-            } else {
-                error_log("File not found: " . $file['path']);
-            }
-            $this->deleteFile($file['id']);
-        }
-
-        $this->deleteDirectory($directoryId);
-    }
-
-    public function deleteDirectory($directoryId)
+    public function deleteDirectory(int $directoryId): void
     {
         $sql = "DELETE FROM `directories` WHERE `id` = :id";
         $this->db->execute($sql, [':id' => $directoryId]);
     }
 
-    public function deleteFile($fileId)
+    public function getLastInsertId(): int
     {
-        $sql = "DELETE FROM `files` WHERE `id` = :id";
-        $this->db->execute($sql, [':id' => $fileId]);
+        return $this->db->getLastInsertId();
     }
 }

@@ -4,106 +4,61 @@ namespace App\Controllers\Api;
 
 use App\Services\DirectoryService;
 use App\Validators\DirectoryValidator;
+use App\Http\Response;
 
 class FolderController
 {
-    private $directoryService;
+    private DirectoryService $directoryService;
 
-    public function __construct()
+    public function __construct(DirectoryService $directoryService)
     {
-        $this->directoryService = new DirectoryService();
+        $this->directoryService = $directoryService;
     }
 
-    public function add()
+    public function add(): void
     {
         $input = json_decode(file_get_contents('php://input'), true);
         $name = $input['folderName'] ?? '';
         $parentId = $input['parentId'] ?? null;
 
         if (empty($name)) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'Folder name is required']);
-            return;
+            Response::error('Имя директории обязательно', 400);
         }
 
-        try {
-            // Валидация имени директории
-            DirectoryValidator::validateName($name);
+        DirectoryValidator::validateName($name);
+        $this->directoryService->createDirectory($name, $parentId);
 
-            // Создание директории в базе данных
-            $newDirectoryId = $this->directoryService->createDirectory($name, $parentId);
-
-            // Получение пути родительской директории
-            $parentPath = $this->directoryService->getDirectoryPathById($parentId);
-            $fullPath = __DIR__ . '/../../../storage/uploads/' . $parentPath . '/' . $name;
-
-            // Создание директории на сервере
-            if (!is_dir($fullPath)) {
-                if (!mkdir($fullPath, 0777, true)) {
-                    throw new \Exception("Не удалось создать директорию: " . $fullPath);
-                }
-            }
-
-            // Возвращаем обновлённое дерево файлов
-            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-            echo json_encode([
-                'success' => true,
-                'directories' => $updatedData['directories'],
-                'files' => $updatedData['files']
-            ]);
-        } catch (\Exception $e) {
-            http_response_code(400);
-            echo json_encode([
-                'success' => false,
-                'error' => $e->getMessage()
-            ]);
-        }
+        $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+        Response::success([
+            'directories' => $updatedData['directories'],
+            'files' => $updatedData['files']
+        ]);
     }
 
-    public function deleteFolder()
+    public function deleteFolder(): void
     {
         $data = json_decode(file_get_contents('php://input'), true);
         $folderId = $data['id'] ?? null;
 
         if (!$folderId) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'Folder ID not provided']);
-            return;
+            Response::error('ID директории не предоставлен', 400);
         }
 
-        try {
-            $this->directoryService->deleteDirectoryWithContents($folderId);
+        $this->directoryService->deleteDirectoryWithContents($folderId);
 
-            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-            echo json_encode([
-                'success' => true,
-                'directories' => $updatedData['directories'],
-                'files' => $updatedData['files']
-            ]);
-        } catch (\Exception $e) {
-            http_response_code(400);
-            echo json_encode([
-                'success' => false,
-                'error' => $e->getMessage()
-            ]);
-        }
+        $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+        Response::success([
+            'directories' => $updatedData['directories'],
+            'files' => $updatedData['files']
+        ]);
     }
 
-    public function getDirectories()
+    public function getDirectories(): void
     {
-        try {
-            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-            echo json_encode([
-                'success' => true,
-                'directories' => $updatedData['directories'],
-                'files' => $updatedData['files']
-            ]);
-        } catch (\Exception $e) {
-            http_response_code(400);
-            echo json_encode([
-                'success' => false,
-                'error' => $e->getMessage()
-            ]);
-        }
+        $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+        Response::success([
+            'directories' => $updatedData['directories'],
+            'files' => $updatedData['files']
+        ]);
     }
 }

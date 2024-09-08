@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Router\Router;
+use App\Http\Response;
 
 class App
 {
@@ -15,28 +16,27 @@ class App
         $this->router = Router::getInstance();
     }
 
-    public function run()
+    public function run(): void
     {
         try {
             $this->loadRoutes();
-
             $method = $_SERVER['REQUEST_METHOD'];
             $uri = $this->getRequestUri();
 
-            $this->router->route($method, $uri, $this->db);
+            // Запуск маршрутизации с использованием DI и обработки ошибок через Response
+            if (!$this->router->route($method, $uri)) {
+                // Если маршрут не найден, возвращаем ответ с ошибкой
+                Response::error('Маршрут не найден', 404);
+            }
         } catch (\Exception $e) {
-            \App\View\View::renderError($e->getMessage());
+            // Обработка исключений с выводом ответа об ошибке через Response
+            Response::error($e->getMessage(), 500);
         }
     }
 
-    protected function loadRoutes()
+    protected function loadRoutes(): void
     {
         require __DIR__ . '/Router/Routes/web.php';
-    }
-
-    protected function loadApiRoutes()
-    {
-        require __DIR__ . '/Router/Routes/api.php';
     }
 
     protected function getRequestUri(): string

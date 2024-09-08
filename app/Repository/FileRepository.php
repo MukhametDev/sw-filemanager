@@ -3,25 +3,26 @@
 namespace App\Repository;
 
 use App\DB\Database;
-use App\Models\Directory;
 use App\Models\FileModel;
 
 class FileRepository
 {
     private $db;
+
     public function __construct()
     {
         $this->db = Database::getInstance();
     }
 
-    public function getFileById($id): array | bool | null
+    public function getFileById(int $id): ?array
     {
         $sql = "SELECT * FROM `files` WHERE `id` = :id";
         $data = $this->db->fetchAssoc($sql, [':id' => $id]);
 
-        return $data ? $data : null;
+        return $data ?: null;
     }
-    public function getAllFiles(): ?array
+
+    public function getAllFiles(): array
     {
         $sql = "SELECT * FROM `files`";
         $data = $this->db->fetchAll($sql);
@@ -39,7 +40,7 @@ class FileRepository
         return $files;
     }
 
-    public function saveFile($name, $directoryId, $size, $mimeType, $path)
+    public function saveFile(string $name, int $directoryId, int $size, string $mimeType, string $path): void
     {
         $sql = "INSERT INTO `files` (`name`, `directory_id`, `size`, `mime_type`, `path`) VALUES (:name, :directory_id, :size, :mime_type, :path)";
         $params = [
@@ -53,17 +54,15 @@ class FileRepository
         $this->db->execute($sql, $params);
     }
 
-    public function deleteFile($fileId)
+    public function deleteFile(int $fileId): void
     {
         $sql = "DELETE FROM `files` WHERE `id` = :id";
         $this->db->execute($sql, [':id' => $fileId]);
     }
 
-    public function getFilesByDirectoryId(int $directoryId): ?array
+    public function getFilesByDirectoryId(int $directoryId): array
     {
         $query = "SELECT * FROM files WHERE directory_id = :directory_id";
-        $data = $this->db->fetchAll($query, [':directory_id' => $directoryId]);
-        return $data ?? null;
+        return $this->db->fetchAll($query, [':directory_id' => $directoryId]);
     }
-
 }

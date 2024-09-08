@@ -2,63 +2,45 @@
 
 namespace App\Router;
 
+use App\Http\Container;
 use App\Traits\Singleton;
-
-require __DIR__ . '/../helpers/helper.php';
-
+use App\Http\Response;
 
 class Router
 {
     use Singleton;
 
-    private static $router;
+    private $routes = [];
+    private Container $container;
 
-    public function __construct(private array $routes = [])
+    public function __construct()
     {
-    }
-
-    public function getRouter(): self
-    {
-        if (!isset(self::$router)) {
-            self::$router = new self();
-        }
-
-        return self::$router;
+        $this->container = new Container(); // Инициализация контейнера
     }
 
     public function get(string $uri, string $action): void
     {
-
         $this->register($uri, $action, "GET");
     }
 
     public function post(string $uri, string $action): void
     {
-
         $this->register($uri, $action, "POST");
     }
 
     public function put(string $uri, string $action): void
     {
-
         $this->register($uri, $action, "PUT");
     }
 
     public function delete(string $uri, string $action): void
     {
-
         $this->register($uri, $action, "DELETE");
     }
 
-    protected function register(string $uri, string $action, string $method)
+    protected function register(string $uri, string $action, string $method): void
     {
-        if (!isset($this->routes[$method])) {
-            $this->routes[$method] = [];
-        }
-
-        $pattern = preg_replace('/\{[^\}]+\}/', '([^/]+)', $uri);
-        $pattern = '#^' . $pattern . '$#';
-
+        $pattern = '#^' . preg_replace('/\{[^\}]+\}/', '([^/]+)', $uri) . '$#';
         list($controller, $function) = $this->extractAction($action);
 
         $this->routes[$method][$pattern] = [
@@ -67,44 +49,37 @@ class Router
         ];
     }
 
-    protected function extractAction(string $action, string $seperator = '@'): array
+    protected function extractAction(string $action, string $separator = '@'): array
     {
-
-        $sepIdx = strpos($action, $seperator);
-
-        $controller = substr($action, 0, $sepIdx);
-        $function = substr($action, $sepIdx + 1, strlen($action));
-
-        return [$controller, $function];
+        [$controller, $method] = explode($separator, $action);
+        return [trim($controller), trim($method)];
     }
 
-    public function route(string $method, string $uri, $db): bool
+    public function route(string $method, string $uri): bool
     {
-        file_put_contents('log.txt', "Routing: $method $uri\n", FILE_APPEND);
-
-        foreach ($this->routes[$method] as $pattern => $result) {
+        foreach ($this->routes[$method] ?? [] as $pattern => $result) {
             if (preg_match($pattern, $uri, $matches)) {
                 array_shift($matches);
-
                 $controller = $result['controller'];
-                $function = $result['method'];
+                $method = $result['method'];
 
-                file_put_contents('log.txt', "Controller: $controller, Method: $function\n", FILE_APPEND);
+                try {
+                    // Используем контейнер для создания экземпляра контроллера с инъекцией зависимостей
+                    $controllerInstance = $this->container->get($controller);
 
-                if (class_exists($controller)) {
-                    $controllerInstance = new $controller();  // Передаем $db в контроллер
-
-                    if (method_exists($controllerInstance, $function)) {
-                        call_user_func_array([$controllerInstance, $function], $matches);
+                    if (method_exists($controllerInstance, $method)) {
+                        call_user_func_array([$controllerInstance, $method], $matches);
                         return true;
                     } else {
-                        \App\View\View::renderError("No method {$function} on class {$controller}");
+                        Response::error("Метод {$method} не найден в классе {$controller}", 404);
                     }
+                } catch (\Exception $e) {
+                    Response::error($e->getMessage(), 500);
                 }
             }
         }
 
-        \App\View\View::renderError("Route not found");
+        // Возвращаем false, если маршрут не был найден
         return false;
     }
 }
