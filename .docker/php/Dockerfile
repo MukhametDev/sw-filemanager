@@ -1,37 +1,20 @@
-# Используем PHP 8.2 FPM как базовый образ
 FROM php:8.2-fpm
 
-# Устанавливаем рабочую директорию
-WORKDIR /var/www
+COPY .docker/php/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 
-# Устанавливаем необходимые PHP-расширения, такие как pdo_mysql, zip и необходимые утилиты
 RUN apt-get update && apt-get install -y \
-    git \
+    zip \
     unzip \
-    libzip-dev \
-    && docker-php-ext-install pdo_mysql zip
+    git 
 
-# Устанавливаем Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Копируем пользовательский php.ini в контейнер
+WORKDIR /var/www/src
+
+RUN docker-php-ext-install pdo_mysql
+
 COPY .docker/php/php.ini /usr/local/etc/php/php.ini
 
-# Копируем только файлы для установки зависимостей
-COPY composer.json composer.lock ./
+RUN mkdir -p /var/run/php && chmod -R 777 /var/run/php && chmod -R 777 /var/www
 
-# Устанавливаем зависимости с помощью Composer
-RUN composer install --no-scripts --no-autoloader --prefer-dist --no-dev
-
-# Копируем проект в контейнер
-COPY . .
-
-# Выполняем компиляцию автозагрузчика
-RUN composer dump-autoload --optimize
-
-# Устанавливаем права на файлы
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www
-
-# Команда для запуска php-fpm
 CMD ["php-fpm"]

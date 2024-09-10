@@ -5,3 +5,4 @@ public/log.txt
 .env
 public/js/modules
 /.idea/
+php-socket/

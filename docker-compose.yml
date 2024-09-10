@@ -8,6 +8,7 @@ services:
     volumes:
       - ./:/var/www
       - ./vendor:/var/www/vendor
+      - ./php-socket:/var/run/php
     ports:
       - 8000:9000
     restart: unless-stopped
@@ -18,8 +19,7 @@ services:
     environment:
       - COMPOSER_MEMORY_LIMIT=-1
     command: >
-      sh -c "composer install && composer dump-autoload --optimize && php-fpm"
-
+      sh -c "cd /var/www && composer install && composer dump-autoload && chmod -R 777 /var/www/ && chmod -R 777 /var/run/php && php-fpm"
   sw-mysql:
     image: mysql
     environment:
@@ -49,6 +49,7 @@ services:
       - ./.docker/nginx/logs:/var/log/nginx
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
       - ./:/var/www
+      - ./php-socket:/var/run/php
     networks:
       - sw
 
