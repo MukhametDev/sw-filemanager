@@ -5,10 +5,10 @@ namespace App\Validators;
 class FileValidator
 {
 
-    public static function isEmpty(array $file): void
+    public static function isEmpty(array|int $file): void
     {
         if (empty($file)) {
-            throw new \Exception("Файл не может быть пустым");
+            throw new \Exception("Переменная пустая");
         }
     }
 
@@ -25,6 +25,13 @@ class FileValidator
     {
         if ($file['size'] > 20000000) {
             throw new \Exception("Размер файла превышает 20MB");
+        }
+    }
+
+    public static function checkFolderExists(string $baseUploadDir): void
+    {
+        if (!$baseUploadDir) {
+            throw new \Exception("Базовая директория для загрузки не найдена");
         }
     }
 }

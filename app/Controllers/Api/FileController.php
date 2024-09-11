@@ -34,6 +34,11 @@ class FileController
     {
         $file = $_FILES['file'] ?? null;
         $parentId = $_POST['parentId'] ?? null;
+        $baseUploadDir = realpath(__DIR__ . '/../../../storage/uploads');
+
+        if($this->fileValidator->checkFolderExists($baseUploadDir)) {
+            return;
+        }
 
         if($this->isInvalidFileRequest($file, $parentId)) {
             return;
@@ -43,7 +48,7 @@ class FileController
             return;
         }
 
-        $this->fileService->uploadFile($file, $parentId);
+        $this->fileService->uploadFile($file, $parentId, $baseUploadDir);
         $this->respondWithUpdateData();
     }
 
@@ -56,6 +61,9 @@ class FileController
             return;
         }
 
+        if($this->fileValidator->isEmpty($fileId)) {
+
+        }
         $this->fileService->deleteFile($fileId);
         $this->respondWithUpdateData();
     }
