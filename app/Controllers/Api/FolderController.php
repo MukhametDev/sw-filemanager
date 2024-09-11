@@ -47,6 +47,7 @@ class FolderController
         $this->directoryService->createDirectory($name, $parentId);
 
         $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+
         $this->response->success([
             'directories' => $updatedData['directories'],
             'files' => $updatedData['files']

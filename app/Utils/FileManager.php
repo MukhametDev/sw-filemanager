@@ -6,11 +6,7 @@ class FileManager
 {
     public function uploadFile(array $file, string $fullUploadPath): string
     {
-        if (!is_dir($fullUploadPath)) {
-            if (!mkdir($fullUploadPath, 0777, true)) {
-                throw new \Exception("Ошибка при создании директории для загрузки: " . $fullUploadPath);
-            }
-        }
+        $this->createDirectoryIfNotExists($fullUploadPath);
 
         $uniqueFileName = uniqid() . '_' . basename($file['name']);
         $filePath = $fullUploadPath . '/' . $uniqueFileName;
@@ -33,6 +29,22 @@ class FileManager
     {
         if (!$file) {
             throw new \Exception("Файл не найден");
+        }
+    }
+
+    public function createDirectoryIfNotExists(string $fullUploadPath): void
+    {
+        if(!is_dir($fullUploadPath)) {
+            if(!mkdir($fullUploadPath, 0777, true)) {
+                throw new \Exception("Не удалось создать директорию: " . $fullUploadPath);
+            }
+        }
+    }
+
+    public function deleteDirectory(string $filePath): void
+    {
+        if(is_dir($filePath)) {
+            rmdir($filePath);
         }
     }
 }

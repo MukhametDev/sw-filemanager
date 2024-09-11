@@ -5,28 +5,30 @@ namespace App\Services;
 use App\Interfaces\DirectoryRepositoryInterface;
 use App\Interfaces\DirectoryServiceInterface;
 use App\Interfaces\FileRepositoryInterface;
+use App\Interfaces\ResponseInterface;
+use App\Utils\FileManager;
 use Exception;
 
 class DirectoryService implements DirectoryServiceInterface
 {
     private DirectoryRepositoryInterface $directoryRepository;
     private FileRepositoryInterface $fileRepository;
+    private FileManager $fileManager;
 
+    private ResponseInterface $response;
     public function __construct(
         DirectoryRepositoryInterface $directoryRepository,
-        FileRepositoryInterface      $fileRepository
+        FileRepositoryInterface $fileRepository,
+        FileManager $fileManager,
     )
     {
         $this->directoryRepository = $directoryRepository;
         $this->fileRepository = $fileRepository;
+        $this->fileManager = $fileManager;
     }
 
     public function createDirectory(string $name, ?int $parentId): int
     {
-        if (empty($name)) {
-            throw new \Exception("Имя директории не может быть пустым");
-        }
-
         $directoryId = $this->directoryRepository->createDirectory($name, $parentId);
 
         if ($parentId === null) {
@@ -36,12 +38,7 @@ class DirectoryService implements DirectoryServiceInterface
         }
 
         $fullPath = __DIR__ . '/../../storage/uploads/' . $parentPath . '/' . $name;
-
-        if (!is_dir($fullPath)) {
-            if (!mkdir($fullPath, 0777, true)) {
-                throw new \Exception("Не удалось создать директорию: " . $fullPath);
-            }
-        }
+        $this->fileManager->createDirectoryIfNotExists($fullPath);
 
         return $directoryId;
     }
@@ -49,8 +46,8 @@ class DirectoryService implements DirectoryServiceInterface
 
     public function deleteDirectoryWithContents(int $directoryId): void
     {
-// Удаление всех файлов из директории
         $files = $this->fileRepository->getFilesByDirectoryId($directoryId);
+
         foreach ($files as $file) {
             if (file_exists($file['path'])) {
                 unlink($file['path']);
@@ -59,15 +56,14 @@ class DirectoryService implements DirectoryServiceInterface
         }
 
         $subdirectories = $this->directoryRepository->getSubdirectories($directoryId);
+
         foreach ($subdirectories as $subdirectory) {
             $this->deleteDirectoryWithContents($subdirectory['id']);
         }
 
         $directoryPath = $this->getDirectoryPathById($directoryId);
         $fullPath = realpath(__DIR__ . '/../../storage/uploads/' . $directoryPath);
-        if (is_dir($fullPath)) {
-            rmdir($fullPath);
-        }
+        $this->fileManager->deleteDirectory($fullPath);
 
         $this->directoryRepository->deleteDirectory($directoryId);
     }
@@ -77,7 +73,10 @@ class DirectoryService implements DirectoryServiceInterface
         $directories = $this->directoryRepository->getAllDirectories();
         $files = $this->fileRepository->getAllFiles();
 
-        return ['directories' => $directories, 'files' => $files];
+        return [
+            'directories' => $directories,
+            'files' => $files
+        ];
     }
 
     public function getDirectoryPathById(int $directoryId): string
@@ -88,6 +87,7 @@ class DirectoryService implements DirectoryServiceInterface
             $path = $directory['name'] . '/' . $path;
             $directoryId = $directory['parent_id'];
         }
+
         return rtrim($path, '/');
     }
 }
