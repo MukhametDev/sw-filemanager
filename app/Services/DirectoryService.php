@@ -2,32 +2,61 @@
 
 namespace App\Services;
 
-use App\Repository\DirectoryRepository;
-use App\Repository\FileRepository;
+use App\Interfaces\DirectoryRepositoryInterface;
+use App\Interfaces\DirectoryServiceInterface;
+use App\Interfaces\FileRepositoryInterface;
+use App\Interfaces\ResponseInterface;
+use App\Utils\FileManager;
+use Exception;
 
-class DirectoryService
+class DirectoryService implements DirectoryServiceInterface
 {
-    protected $directoryRepository;
-    protected $fileRepository;
-
-    public function __construct()
-    {
-        $this->directoryRepository = new DirectoryRepository();
-        $this->fileRepository = new FileRepository();
-    }
+    public function __construct(
+        private DirectoryRepositoryInterface $directoryRepository,
+        private FileRepositoryInterface $fileRepository,
+        private FileManager $fileManager,
+        private ResponseInterface $response
+    ) {}
 
     public function createDirectory(string $name, ?int $parentId): int
     {
-        if (empty($name)) {
-            throw new \Exception("Имя директории не может быть пустым");
+        $directoryId = $this->directoryRepository->createDirectory($name, $parentId);
+
+        if ($parentId === null) {
+            $parentPath = '';
+        } else {
+            $parentPath = $this->getDirectoryPathById($parentId);
         }
 
-        return $this->directoryRepository->createDirectory($name, $parentId);
+        $fullPath = __DIR__ . '/../../storage/uploads/' . $parentPath . '/' . $name;
+        $this->fileManager->createDirectoryIfNotExists($fullPath);
+
+        return $directoryId;
     }
+
 
     public function deleteDirectoryWithContents(int $directoryId): void
     {
-        $this->directoryRepository->deleteDirectoryWithContents($directoryId);
+        $files = $this->fileRepository->getFilesByDirectoryId($directoryId);
+
+        foreach ($files as $file) {
+            if (file_exists($file['path'])) {
+                unlink($file['path']);
+            }
+            $this->fileRepository->deleteFile($file['id']);
+        }
+
+        $subdirectories = $this->directoryRepository->getSubdirectories($directoryId);
+
+        foreach ($subdirectories as $subdirectory) {
+            $this->deleteDirectoryWithContents($subdirectory['id']);
+        }
+
+        $directoryPath = $this->getDirectoryPathById($directoryId);
+        $fullPath = realpath(__DIR__ . '/../../storage/uploads/' . $directoryPath);
+        $this->fileManager->deleteDirectory($fullPath);
+
+        $this->directoryRepository->deleteDirectory($directoryId);
     }
 
     public function getAllDirectoriesAndFiles(): array
@@ -35,6 +64,21 @@ class DirectoryService
         $directories = $this->directoryRepository->getAllDirectories();
         $files = $this->fileRepository->getAllFiles();
 
-        return ['directories' => $directories, 'files' => $files];
+        return [
+            'directories' => $directories,
+            'files' => $files
+        ];
+    }
+
+    public function getDirectoryPathById(int $directoryId): string
+    {
+        $path = '';
+        while ($directoryId) {
+            $directory = $this->directoryRepository->getDirectoryById($directoryId);
+            $path = $directory['name'] . '/' . $path;
+            $directoryId = $directory['parent_id'];
+        }
+
+        return rtrim($path, '/');
     }
 }
