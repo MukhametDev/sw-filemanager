@@ -2,52 +2,34 @@
 
 namespace App\Services;
 
-use App\Repository\FileRepository;
+use App\Interfaces\DirectoryServiceInterface;
+use App\Interfaces\FileRepositoryInterface;
+use App\Interfaces\FileServiceInterface;
+use App\Utils\FileManager;
 
-class FileService
+class FileService implements FileServiceInterface
 {
-    protected $fileRepository;
+    public function __construct(
+        private FileRepositoryInterface $fileRepository,
+        private DirectoryServiceInterface $directoryService,
+        private FileManager $fileManager
+    ) {}
 
-    public function __construct()
+    public function uploadFile(array $file, int $parentId, string $baseUploadDir): void
     {
-        $this->fileRepository = new FileRepository();
-    }
+        $parentPath = $this->directoryService->getDirectoryPathById($parentId);
+        $fullUploadPath = $baseUploadDir . ($parentPath ? '/' . $parentPath : '');
+        $filePath = $this->fileManager->uploadFile($file, $fullUploadPath);
 
-    public function uploadFile(array $file, int $parentId): void
-    {
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
-        if (!in_array($file['type'], $allowedTypes)) {
-            throw new \Exception("Недопустимый тип файла");
-        }
-
-        if ($file['size'] > 20000000) {
-            throw new \Exception("Размер файла превышает 20MB");
-        }
-
-        $uploadDir = __DIR__ . '/../../storage/uploads';
-        $filePath = $uploadDir . '/' . basename($file['name']);
-
-        if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
-        }
-
-        if (!move_uploaded_file($file['tmp_name'], $filePath)) {
-            throw new \Exception("Ошибка загрузки файла");
-        }
-
-        $this->fileRepository->saveFile($file['name'], $parentId, $file['size'], $file['type'], $filePath);
+        $this->fileRepository->saveFile(basename($filePath), $parentId, $file['size'], $file['type'], $filePath);
     }
 
     public function deleteFile(int $fileId): void
     {
         $file = $this->fileRepository->getFileById($fileId);
-        if (!$file) {
-            throw new \Exception("Файл не найден");
-        }
 
-        if (file_exists($file['path'])) {
-            unlink($file['path']);
-        }
+        $this->fileManager->checkFileExists($file);
+        $this->fileManager->deleteFile($file);
 
         $this->fileRepository->deleteFile($fileId);
     }

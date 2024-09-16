@@ -2,121 +2,155 @@
 
 namespace App\Controllers\Api;
 
-use App\Services\FileService;
-use App\Services\DirectoryService;
+use App\Handlers\RequestHandler;
+use App\Interfaces\FileServiceInterface;
+use App\Interfaces\DirectoryServiceInterface;
+use App\Interfaces\ResponseInterface;
 use App\Validators\FileValidator;
 
 class FileController
 {
-    private $fileService;
-    private $directoryService;
+    public function __construct(
+        private FileServiceInterface $fileService,
+        private DirectoryServiceInterface $directoryService,
+        private ResponseInterface $response,
+        private FileValidator $fileValidator,
+        private RequestHandler $requestHandler
+    ) {}
 
-    public function __construct()
+    public function uploadFile(): void
     {
-        $this->fileService = new FileService();
-        $this->directoryService = new DirectoryService();
-    }
+        $file = $_FILES['file'] ?? null;
+        $parentId = $_POST['parentId'] ?? null;
+        $baseUploadDir = realpath(__DIR__ . '/../../../storage/uploads');
 
-    public function uploadFile()
-    {
-        $file = $_FILES['file'];
-        $parentId = $_POST['parentId'];
-
-        try {
-            FileValidator::validateFile($file);
-            $this->fileService->uploadFile($file, $parentId);
-
-            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-
-            echo json_encode([
-                'success' => true,
-                'directories' => $updatedData['directories'],
-                'files' => $updatedData['files']
-            ]);
-        } catch (\Exception $e) {
-            http_response_code(400);
-            echo json_encode([
-                'success' => false,
-                'error' => $e->getMessage()
-            ]);
+        if ($this->fileValidator->checkFolderExists($baseUploadDir)) {
+            return;
         }
-    }
 
-    public function deleteFile()
-    {
-        $data = json_decode(file_get_contents('php://input'), true);
-        $fileId = $data['id'];
-
-        try {
-            $this->fileService->deleteFile($fileId);
-
-            $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
-
-            echo json_encode([
-                'success' => true,
-                'directories' => $updatedData['directories'],
-                'files' => $updatedData['files']
-            ]);
-        } catch (\Exception $e) {
-            echo json_encode([
-                'success' => false,
-                'error' => $e->getMessage()
-            ]);
+        if ($this->isInvalidFileRequest($file, $parentId)) {
+            return;
         }
+
+        if (!$this->validateFile($file, $parentId)) {
+            return;
+        }
+
+        $this->fileService->uploadFile($file, $parentId, $baseUploadDir);
+        $this->respondWithUpdateData();
     }
 
-    public function downloadFile()
+    public function deleteFile(): void
+    {
+        $fileId = $this->requestHandler->getJsonData()['id'] ?? null;
+
+        if (!$fileId) {
+            $this->response->error('ID файла не предоставлен', 400);
+            return;
+        }
+
+        if ($this->fileValidator->isEmpty($fileId)) {
+        }
+        $this->fileService->deleteFile($fileId);
+        $this->respondWithUpdateData();
+    }
+
+    public function downloadFile(): void
     {
         $fileId = $_GET['id'] ?? null;
 
         if (!$fileId) {
-            echo json_encode(['success' => false, 'error' => 'File ID not provided']);
+            $this->response->error('ID файла не предоставлен', 400);
             return;
         }
 
-        try {
-            $file = $this->fileService->getFileById($fileId);
+        $file = $this->fileService->getFileById($fileId);
 
-            if (!$file) {
-                echo json_encode(['success' => false, 'error' => 'File not found']);
-                return;
-            }
-
-            $filePath = $file['path'];
-            $fileName = $file['name'];
-
-            if (!file_exists($filePath)) {
-                echo json_encode(['success' => false, 'error' => 'File does not exist']);
-                return;
-            }
-
-            header('Content-Description: File Transfer');
-            header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');
-            header('Expires: 0');
-            header('Cache-Control: must-revalidate');
-            header('Pragma: public');
-            header('Content-Length: ' . filesize($filePath));
-
-            readfile($filePath);
-            exit;
-        } catch (\Exception $e) {
-            echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+        if (!$file || !file_exists($file['path'])) {
+            $this->response->error('Файл не найден', 404);
+            return;
         }
+
+        $this->outputFile($file['name'], $file['path']);
     }
 
-    public function showImage()
+    public function showImage(): void
     {
-        $fileName = urldecode($_GET['file']);
+        $fileId = $_GET['id'] ?? null;
 
-        $filePath = __DIR__ . '/../../../storage/uploads/' . $fileName;
-
-        if (!file_exists($filePath)) {
-            header("HTTP/1.0 404 Not Found");
-            echo "File not found";
+        if (!$fileId) {
+            $this->response->error('ID файла не предоставлен', 400);
             return;
         }
 
+        $file = $this->fileService->getFileById($fileId);
+
+        $filePath = __DIR__ . '/../../../storage/uploads/' . $file['path'];
+        $relativeFilePath = str_replace('/var/www/storage/uploads/', '', $filePath);
+
+        if ($this->fileValidator->isEmpty($file) || !file_exists($relativeFilePath)) {
+            $this->response->error('Файл не найден', 404);
+            return;
+        }
+
+        $this->outputImage($relativeFilePath);
+    }
+
+    private function isInvalidFileRequest($file, $parentId): bool
+    {
+        if ($this->fileValidator->isEmpty($file) || !$parentId) {
+            $this->response->error('Файл или ID родителя не предоставлены', 400);
+            return true;
+        }
+        return false;
+    }
+
+    private function respondWithUpdateData(): void
+    {
+        $updatedData = $this->directoryService->getAllDirectoriesAndFiles();
+
+        $this->response->success([
+            'directories' => $updatedData['directories'],
+            'files' => $updatedData['files']
+        ]);
+    }
+
+    private function validateFile(array $file, int $parentId): bool
+    {
+        if ($this->fileValidator->isEmpty($file) || !$parentId) {
+            $this->response->error('Файл или ID родителя не предоставлены', 400);
+            return false;
+        }
+
+        if ($this->fileValidator->validateTypeOfFile($file)) {
+            $this->response->error('Недопустимый тип файла', 400);
+            return false;
+        }
+
+        if ($this->fileValidator->validateSizeOfFile($file)) {
+            $this->response->error('Размер файла превышает 20MB', 400);
+            return false;
+        }
+
+        return true;
+    }
+
+    private function outputFile(string $filename, string $filepath): void
+    {
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/octet-stream');
+        header('Content-Disposition: attachment; filename="' . basename($filename) . '"');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate');
+        header('Pragma: public');
+        header('Content-Length: ' . filesize($filepath));
+
+        readfile($filepath);
+        exit;
+    }
+
+    private function outputImage(string $filePath): void
+    {
         $mimeType = mime_content_type($filePath);
 
         header('Content-Type: ' . $mimeType);

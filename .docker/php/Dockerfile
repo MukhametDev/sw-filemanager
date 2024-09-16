@@ -1,30 +1,33 @@
-# Используем PHP 8.2 FPM как базовый образ
 FROM php:8.2-fpm
 
-# Устанавливаем рабочую директорию
-WORKDIR /var/www
+# Копируем конфиг PHP-FPM
+COPY .docker/php/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 
-# Устанавливаем необходимые PHP-расширения, такие как pdo_mysql
-RUN docker-php-ext-install pdo_mysql
+# Устанавливаем системные зависимости и расширения PHP
+RUN apt-get update && apt-get install -y \
+    zip \
+    unzip \
+    git \
+    && docker-php-ext-install pdo_mysql \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Устанавливаем Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Копируем пользовательский php.ini в контейнер
-COPY .docker/php/php.ini /usr/local/etc/php/php.ini
+# Устанавливаем рабочую директорию
+WORKDIR /var/www/
 
-# Копируем проект в контейнер
+# Копируем файлы приложения
 COPY . .
 
-# Устанавливаем зависимости с помощью Composer
-RUN composer install --no-scripts --no-autoloader
+# Настраиваем права доступа и владельца файлов
+RUN chown -R www-data:www-data /var/www/ && chmod -R 775 /var/www/storage
 
-# Выполняем компиляцию автозагрузчика
-RUN composer dump-autoload --optimize
+# Создаем директорию для PHP сокета и настраиваем права доступа
+RUN mkdir -p /var/run/php && chown -R www-data:www-data /var/run/php
 
-# Устанавливаем права на файлы
-RUN chown -R www-data:www-data /var/www \
-    && chmod -R 755 /var/www
+# Устанавливаем зависимости Composer
+RUN composer install --no-interaction --optimize-autoloader
 
-# Команда для запуска php-fpm
+# Запуск PHP-FPM
 CMD ["php-fpm"]

@@ -3,3 +3,6 @@ vendor/
 public/adminer.php
 public/log.txt
 .env
+public/js/modules
+/.idea/
+php-socket/

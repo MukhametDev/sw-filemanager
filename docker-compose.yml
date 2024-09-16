@@ -3,13 +3,11 @@ version: '3.8'
 services:
   sw-php:
     build:
-      context: ../filemanager
-      dockerfile: ../filemanager/.docker/php/Dockerfile
+      context: ./
+      dockerfile: ./.docker/php/Dockerfile
     volumes:
       - ./:/var/www
-      - ./vendor:/var/www/vendor
-    ports:
-      - 8000:9000
+      - ./php-socket:/var/run/php
     restart: unless-stopped
     depends_on:
       - sw-mysql
@@ -17,11 +15,13 @@ services:
       - sw
     environment:
       - COMPOSER_MEMORY_LIMIT=-1
-    command: >
-      sh -c "composer install && composer dump-autoload --optimize && php-fpm"
+
+    command: sh -c "if [ ! -d 'vendor' ]; then composer install --no-interaction --optimize-autoloader; fi && php-fpm"
 
   sw-mysql:
     image: mysql
+    env_file:
+      - .env
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
@@ -40,7 +40,7 @@ services:
   sw-nginx:
     image: nginx:latest
     ports:
-      - 3000:80
+      - 8080:80
     depends_on:
       - sw-php
       - sw-mysql
@@ -49,6 +49,7 @@ services:
       - ./.docker/nginx/logs:/var/log/nginx
       - ./.docker/nginx/conf.d:/etc/nginx/conf.d
       - ./:/var/www
+      - ./php-socket:/var/run/php
     networks:
       - sw
 
