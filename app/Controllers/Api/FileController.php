@@ -44,12 +44,9 @@ class FileController
     {
         $fileId = $this->requestHandler->getJsonData()['id'] ?? null;
 
-        if (!$fileId) {
+        if ($this->fileValidator->isEmpty($fileId)) {
             $this->response->error('ID файла не предоставлен', 400);
             return;
-        }
-
-        if ($this->fileValidator->isEmpty($fileId)) {
         }
         $this->fileService->deleteFile($fileId);
         $this->respondWithUpdateData();

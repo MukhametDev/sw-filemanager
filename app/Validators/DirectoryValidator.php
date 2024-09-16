@@ -17,4 +17,11 @@ class DirectoryValidator
             throw new \Exception("Имя директории слишком длинное");
         }
     }
+
+    public function validateId(int $id): void
+    {
+        if (empty($id)) {
+            throw new \Exception("Переменная пустая");
+        }
+    }
 }

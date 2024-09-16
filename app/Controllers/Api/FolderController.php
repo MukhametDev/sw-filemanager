@@ -47,7 +47,7 @@ class FolderController
         $data = $this->requestHandler->getJsonData();
         $folderId = $data['id'] ?? null;
 
-        if (!$folderId) {
+        if ($this->directoryValidator->validateId($folderId)) {
             $this->response->error('ID директории не предоставлен', 400);
             return;
         }
