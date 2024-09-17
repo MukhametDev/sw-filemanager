@@ -1,0 +1,295 @@
+@import url('reset.css');
+
+body {
+    color: black;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 15px 30px;
+    gap: 20px;
+}
+
+.sidebar {
+    flex: 1 0 50%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 900px;
+}
+
+/* Обновленный стиль для ошибки под input */
+.sidebar__error, .sidebar__error-file {
+    color: red;
+    display: none; /* Ошибки изначально скрыты */
+    font-size: 12px;
+    margin-top: 5px;
+    position: absolute; /* Ошибка отображается под input */
+}
+
+/* Стиль для ошибки под input */
+.sidebar__error {
+    margin-top: 5px;
+    left: 0;
+    bottom: -20px; /* Отображение ниже input */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Обновленный стиль для контейнера кнопок */
+.sidebar__btns {
+    display: flex;
+    gap: 10px; /* Отступы между кнопками */
+    flex-wrap: wrap; /* Кнопки будут переноситься на новую строку при необходимости */
+    position: relative; /* Устанавливаем относительное позиционирование для контейнера */
+}
+
+/* Обновленный стиль для ошибки под кнопкой "Добавить файл" */
+.sidebar__error-file {
+    display: none; /* Ошибка изначально скрыта */
+    position: absolute; /* Абсолютное позиционирование внутри родителя */
+    bottom: -20px; /* Располагаем ошибку под кнопками */
+    left: 130px; /* Настраиваем отступ слева для позиционирования под нужной кнопкой */
+    white-space: nowrap; /* Ошибка не переносится */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляем троеточие для длинных ошибок */
+}
+
+.sidebar__top:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.sidebar__form {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по центру по вертикали */
+    justify-content: space-between; /* Размещение элементов по краям */
+    gap: 10px; /* Отступ между инпутом и кнопками */
+    width: 100%; /* Убедимся, что форма занимает всю ширину */
+    position: relative; /* Для позиционирования ошибок */
+}
+
+.sidebar__input-wrapper {
+    width: 100%;
+    flex: 1; /* Инпут должен занимать всю возможную ширину */
+    margin-right: 10px; /* Отступ между инпутом и кнопками */
+    position: relative; /* Относительное позиционирование для ошибок */
+}
+
+.sidebar__input {
+    width: 100%; /* Инпут растягивается на всю ширину родительского контейнера */
+    padding: 8px;
+    box-sizing: border-box; /* Чтобы padding и border были включены в расчёт ширины */
+    border-radius: 5px;
+}
+
+.sidebar__directories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__directory {
+    position: relative;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sidebar__directory::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/Folder.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+}
+
+.sidebar__directory.selected {
+    color: #404ECC;
+}
+.sidebar__directory.selected .sidebar__directory,
+.sidebar__directory.selected .sidebar__file {
+    color: black;
+}
+.sidebar__directory.active {
+    background-color: #d1d1d1;
+}
+.sidebar__file {
+    padding: 8px;
+    cursor: pointer;
+    word-break: break-all; /* Перенос длинных строк */
+    overflow-wrap: break-word; /* Альтернативный способ для переноса */
+}
+
+.sidebar__file::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/Icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+}
+
+.sidebar__file.selected {
+    color: #404ECC;
+    word-break: break-all;
+}
+
+.sidebar__btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #d1d1d1;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+    flex-shrink: 0; /* Предотвращает сжатие кнопок на маленьких экранах */
+}
+
+.sidebar__btn:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
+
+.sidebar__btn:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.sidebar__btn.active {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content {
+    flex: 1 0 50%;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 900px;
+}
+
+.content__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.content__heading {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    word-break: break-all;
+}
+
+.content__title {
+    color: #404ECC;
+}
+
+.content__btn {
+    padding: 5px 20px;
+    border-radius: 8px;
+    background-color: #d1d1d1;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.content__btn:disabled {
+    background-color: #f0f0f0;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #ddd;
+}
+
+.content__btn.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.content__btn:hover:not(:disabled) {
+    background-color: #b8b8b8;
+}
+
+.content__bottom {
+    align-self: center;
+}
+
+.img, .no-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 1355px) {
+    .sidebar__form {
+        flex-direction: column;
+        gap: 25px;
+        align-items: flex-start;
+    }
+    .sidebar__input {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .main {
+        flex-wrap: wrap;
+    }
+    .sidebar, .content {
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar__form {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .content__top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar__btn {
+        padding: 4px 8px;
+    }
+
+    .sidebar__error,
+    .sidebar__error-file {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar__error-file {
+        left: 80px;
+    }
+}
+@media (max-width: 400px) {
+    .sidebar__btns {
+        flex-direction: column;
+        align-self: center;
+        width: 100%; /* Исправлено w100p */
+    }
+    .sidebar__error {
+        left: 18%;
+    }
+}

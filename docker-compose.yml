@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  sw-php:
+    build:
+      context: ./
+      dockerfile: ./.docker/php/Dockerfile
+    volumes:
+      - ./:/var/www
+      - ./php-socket:/var/run/php
+    restart: unless-stopped
+    depends_on:
+      - sw-mysql
+    networks:
+      - sw
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+
+    command: sh -c "if [ ! -d 'vendor' ]; then composer install --no-interaction --optimize-autoloader; fi && php-fpm"
+
+  sw-mysql:
+    image: mysql
+    env_file:
+      - .env
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    restart: unless-stopped
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./default.sql:/docker-entrypoint-initdb.d/default.sql
+    ports:
+      - ${DB_PORT}:3306
+    networks:
+      - sw
+
+  sw-nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    depends_on:
+      - sw-php
+      - sw-mysql
+    restart: unless-stopped
+    volumes:
+      - ./.docker/nginx/logs:/var/log/nginx
+      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
+      - ./:/var/www
+      - ./php-socket:/var/run/php
+    networks:
+      - sw
+
+networks:
+  sw:
+    driver: bridge
+
+volumes:
+  mysql-data:
