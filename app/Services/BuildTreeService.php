@@ -4,33 +4,36 @@ namespace App\Services;
 
 class BuildTreeService
 {
-    public function buildTreeHtml($directories, $files, $parentId = null)
+    public function buildTree($directories, $files, $parentId = null)
     {
-        $html = '<ul class="sidebar__directories">';
+        $tree = [];
 
         foreach ($directories as $directory) {
             if ($directory->parent_id == $parentId) {
-                $html .= '<li class="sidebar__directory" data-id="' . $directory->id . '">'
-                    . htmlspecialchars($directory->name);
+                // Добавляем директорию в массив дерева
+                $children = $this->buildTree($directories, $files, $directory->id);
 
-                $html .= $this->buildTreeHtml($directories, $files, $directory->id);
+                $directoryData = [
+                    'id' => $directory->id,
+                    'name' => $directory->name,
+                    'files' => [],
+                    'children' => $children,
+                ];
 
-                $html .= '<ul class="sidebar__directories">';
+                // Добавляем файлы в эту директорию
                 foreach ($files as $file) {
                     if ($file->directory_id == $directory->id) {
-                        $html .= '<li class="sidebar__file" data-id="' . $file->id . '"> '
-                            . htmlspecialchars($file->name) .
-                            '</li>';
+                        $directoryData['files'][] = [
+                            'id' => $file->id,
+                            'name' => $file->name,
+                        ];
                     }
                 }
-                $html .= '</ul>';
 
-                $html .= '</li>';
+                $tree[] = $directoryData;
             }
         }
 
-        $html .= '</ul>';
-
-        return $html;
+        return $tree;
     }
 }

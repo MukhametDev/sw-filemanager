@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo htmlspecialchars(\App\View\View::includeCSS('style.css')); ?>">
+    <link rel="stylesheet" href="<?=(\App\View\View::includeCSS('style.css')); ?>">
     <title><?php echo htmlspecialchars($title); ?></title>
 </head>
 
@@ -26,7 +26,7 @@
             </form>
         </div>
         <div class="sidebar__bottom">
-            <?php echo $data['directories'] ?>
+            <?php echo $tree; ?>
         </div>
     </section>
     <section class="content">
@@ -40,7 +40,7 @@
     </section>
 </main>
 
-<script type="module" src="<?php echo htmlspecialchars(\App\View\View::includeJS('app.js')); ?>"></script>
+<script type="module" src="<?=(\App\View\View::includeJS('app.js')); ?>"></script>
 </body>
 
 </html>

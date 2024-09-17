@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 
-use App\DB\Database;
 use App\Repository\DirectoryRepository;
 use App\Repository\FileRepository;
 use App\Services\BuildTreeService;
@@ -15,15 +14,16 @@ class HomeController
         private FileRepository $fileRepository,
         private DirectoryRepository $directoryRepository
     ) {}
+
     public function index()
     {
         $directories = $this->directoryRepository->getAllDirectories();
         $files = $this->fileRepository->getAllFiles();
-        $treeHtml = $this->buildTreeService->buildTreeHtml($directories, $files);
+        $tree = $this->buildTreeService->buildTree($directories, $files);
 
         $data = [
             'title' => 'Файловый менеджер',
-            'directories' => $treeHtml
+            'directoriesTree' => $tree
         ];
 
         View::render('home', $data);
