@@ -4,6 +4,8 @@ namespace App\Validators;
 
 class FileValidator
 {
+    private const ALLOWED_FILE_TYPES = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
+    private const MAX_FILE_SIZE_BYTES = 20 * 1024 * 1024;
 
     public static function isEmpty(array|int $file): void
     {
@@ -14,17 +16,15 @@ class FileValidator
 
     public static function validateTypeOfFile(array $file): void
     {
-        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'application/pdf'];
-
-        if (!in_array($file['type'], $allowedTypes)) {
+        if (!in_array($file['type'], self::ALLOWED_FILE_TYPES)) {
             throw new \Exception("Недопустимый тип файла");
         }
     }
 
     public static function validateSizeOfFile(array $file): void
     {
-        if ($file['size'] > 20000000) {
-            throw new \Exception("Размер файла превышает 20MB");
+        if ($file['size'] > self::MAX_FILE_SIZE_BYTES) {
+            throw new \Exception("Размер файла превышает " . (self::MAX_FILE_SIZE_BYTES / 1024 / 1024) . "MB");
         }
     }
 
