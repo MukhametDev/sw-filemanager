@@ -34,10 +34,12 @@ class FileManager
 
     public function createDirectoryIfNotExists(string $fullUploadPath): void
     {
-        if(!is_dir($fullUploadPath)) {
-            if(!mkdir($fullUploadPath, 0777, true)) {
-                throw new \Exception("Не удалось создать директорию: " . $fullUploadPath);
-            }
+        if (is_dir($fullUploadPath)) {
+            return;
+        }
+
+        if (!mkdir($fullUploadPath, 0777, true)) {
+            throw new \Exception("Не удалось создать директорию: " . $fullUploadPath);
         }
     }
 
