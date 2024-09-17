@@ -21,7 +21,7 @@ WORKDIR /var/www/
 COPY . .
 
 # Настраиваем права доступа и владельца файлов
-RUN chown -R www-data:www-data /var/www/ && chmod -R 775 /var/www/storage
+RUN chown -R www-data:www-data /var/www/ && chmod -R 777 /var/www/storage
 
 # Создаем директорию для PHP сокета и настраиваем права доступа
 RUN mkdir -p /var/run/php && chown -R www-data:www-data /var/run/php
