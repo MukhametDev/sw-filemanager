@@ -19,6 +19,14 @@ use App\Interfaces\BuildTreeInterface;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+set_exception_handler(function ($exception) {
+    Response::error($exception->getMessage(), 500);
+});
+
 $config = Config::getInstance();
 
 $db = Database::getInstance($config->getDBSettings());
